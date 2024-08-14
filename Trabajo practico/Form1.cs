@@ -19,6 +19,7 @@ namespace Trabajo_practico
         private void signUp_Banner()
         {
             // show sign up banner
+            logInBTN.Visible = false;
             signUpBTN.Visible = false;
             signUpBanner.Visible = true;
             signUpBannerBTN.Visible = true;
@@ -34,6 +35,7 @@ namespace Trabajo_practico
         private void logIn_Banner()
         {
             //show log in banner
+            signUpBTN.Visible=false;
             logInBTN.Visible = false;
             logInBanner.Visible = true;
             logInBannerBTN.Visible = true;
@@ -45,18 +47,12 @@ namespace Trabajo_practico
             sUp_icon.Visible = false;
             sUp_img.Visible = false;
             sUp_message.Visible = false;
-            logInBTN2.Visible = false;
+            
         }
 
         private void hideAll()
-        {    
-            if (signed == false)
-            {
-                /*//hide signup confirmation
-            sUp_icon.Visible = false;
-            sUp_img.Visible = false;
-            sUp_message.Visible = false;
-            logInBTN2.Visible = false;*/
+        {
+            
 
                 //hide signup banner
                 signUpBanner.Visible = false;
@@ -81,19 +77,16 @@ namespace Trabajo_practico
                 }
 
                 signUpBTN.Visible = true;
-            }
-            
-
             
 
 
             if (logged == false)
             {
-                logInBTN.Visible = true;                
-            }                      
-            
+                logInBTN.Visible = true;
+            }
+
         }
-                
+
         private void logInBTN_Click(object sender, EventArgs e)
         {
             logIn_Banner();
@@ -102,7 +95,7 @@ namespace Trabajo_practico
         private void signUpBTN_Click(object sender, EventArgs e)
         {
             signUp_Banner();
-        }                
+        }
         private void signUpEnterBTN_Click(object sender, EventArgs e)
         {
 
@@ -130,9 +123,9 @@ namespace Trabajo_practico
             sUp_icon.Visible = true;
             sUp_img.Visible = true;
 
-                        
+
             sUp_message.Visible = true;
-            logInBTN2.Visible = true;            
+            
         }
 
         private void logInBTN2_Click(object sender, EventArgs e)
@@ -207,6 +200,11 @@ namespace Trabajo_practico
             email = "";
             dni = 0;
             phoneNumber = 0;
+        }
+
+        private void cbaImg1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

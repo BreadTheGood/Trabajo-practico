@@ -51,7 +51,6 @@ namespace Trabajo_practico
             sUp_img = new PictureBox();
             sUp_message = new Label();
             sUp_icon = new PictureBox();
-            logInBTN2 = new Button();
             sub_Background2 = new Label();
             cbaImg1 = new PictureBox();
             bairesImg = new PictureBox();
@@ -66,7 +65,6 @@ namespace Trabajo_practico
             vuelo6 = new Button();
             cbaImg3 = new PictureBox();
             logoutBTN = new Button();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)logInBanner).BeginInit();
             ((System.ComponentModel.ISupportInitialize)signUpBanner).BeginInit();
             ((System.ComponentModel.ISupportInitialize)sUp_img).BeginInit();
@@ -88,10 +86,10 @@ namespace Trabajo_practico
             logInBTN.FlatStyle = FlatStyle.Flat;
             logInBTN.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             logInBTN.ForeColor = SystemColors.Control;
-            logInBTN.Location = new Point(1415, 29);
+            logInBTN.Location = new Point(1034, 91);
             logInBTN.Margin = new Padding(0);
             logInBTN.Name = "logInBTN";
-            logInBTN.Size = new Size(89, 62);
+            logInBTN.Size = new Size(147, 62);
             logInBTN.TabIndex = 98;
             logInBTN.Text = "LOG IN";
             logInBTN.UseVisualStyleBackColor = false;
@@ -100,10 +98,10 @@ namespace Trabajo_practico
             // login_username
             // 
             login_username.BorderStyle = BorderStyle.None;
-            login_username.Location = new Point(1355, 91);
+            login_username.Location = new Point(997, 91);
             login_username.Name = "login_username";
             login_username.PlaceholderText = "USER NAME";
-            login_username.Size = new Size(220, 24);
+            login_username.Size = new Size(220, 16);
             login_username.TabIndex = 9;
             login_username.TextAlign = HorizontalAlignment.Center;
             login_username.Visible = false;
@@ -111,10 +109,10 @@ namespace Trabajo_practico
             // login_password
             // 
             login_password.BorderStyle = BorderStyle.None;
-            login_password.Location = new Point(1355, 153);
+            login_password.Location = new Point(997, 138);
             login_password.Name = "login_password";
             login_password.PlaceholderText = "PASSWORD";
-            login_password.Size = new Size(220, 24);
+            login_password.Size = new Size(220, 16);
             login_password.TabIndex = 10;
             login_password.TextAlign = HorizontalAlignment.Center;
             login_password.UseSystemPasswordChar = true;
@@ -129,7 +127,7 @@ namespace Trabajo_practico
             signUpBTN.FlatStyle = FlatStyle.Flat;
             signUpBTN.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             signUpBTN.ForeColor = SystemColors.AppWorkspace;
-            signUpBTN.Location = new Point(1386, 91);
+            signUpBTN.Location = new Point(1034, 9);
             signUpBTN.Margin = new Padding(0);
             signUpBTN.Name = "signUpBTN";
             signUpBTN.Size = new Size(147, 73);
@@ -146,7 +144,7 @@ namespace Trabajo_practico
             subBackground.ForeColor = SystemColors.ButtonFace;
             subBackground.Location = new Point(0, 0);
             subBackground.Name = "subBackground";
-            subBackground.Size = new Size(1575, 1050);
+            subBackground.Size = new Size(1217, 749);
             subBackground.TabIndex = 2;
             subBackground.Text = "BIENVENIDO\r\nVuelos Argentina";
             subBackground.TextAlign = ContentAlignment.TopCenter;
@@ -156,7 +154,7 @@ namespace Trabajo_practico
             // logInBanner
             // 
             logInBanner.BackColor = SystemColors.ActiveBorder;
-            logInBanner.Location = new Point(1355, 0);
+            logInBanner.Location = new Point(997, 0);
             logInBanner.Name = "logInBanner";
             logInBanner.Size = new Size(220, 294);
             logInBanner.TabIndex = 100;
@@ -173,10 +171,10 @@ namespace Trabajo_practico
             logInBannerBTN.FlatStyle = FlatStyle.Flat;
             logInBannerBTN.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             logInBannerBTN.ForeColor = SystemColors.Control;
-            logInBannerBTN.Location = new Point(1424, 26);
+            logInBannerBTN.Location = new Point(1034, 9);
             logInBannerBTN.Margin = new Padding(0);
             logInBannerBTN.Name = "logInBannerBTN";
-            logInBannerBTN.Size = new Size(89, 62);
+            logInBannerBTN.Size = new Size(147, 62);
             logInBannerBTN.TabIndex = 101;
             logInBannerBTN.Text = "LOG IN";
             logInBannerBTN.UseVisualStyleBackColor = false;
@@ -191,7 +189,7 @@ namespace Trabajo_practico
             logInEnterBTN.FlatStyle = FlatStyle.Flat;
             logInEnterBTN.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             logInEnterBTN.ForeColor = SystemColors.Control;
-            logInEnterBTN.Location = new Point(1355, 232);
+            logInEnterBTN.Location = new Point(997, 232);
             logInEnterBTN.Margin = new Padding(0);
             logInEnterBTN.Name = "logInEnterBTN";
             logInEnterBTN.Size = new Size(220, 62);
@@ -204,9 +202,9 @@ namespace Trabajo_practico
             // signUpBanner
             // 
             signUpBanner.BackColor = SystemColors.ActiveBorder;
-            signUpBanner.Location = new Point(1355, 0);
+            signUpBanner.Location = new Point(997, 0);
             signUpBanner.Name = "signUpBanner";
-            signUpBanner.Size = new Size(220, 652);
+            signUpBanner.Size = new Size(220, 458);
             signUpBanner.TabIndex = 103;
             signUpBanner.TabStop = false;
             signUpBanner.Visible = false;
@@ -214,10 +212,10 @@ namespace Trabajo_practico
             // sUP_fullname
             // 
             sUP_fullname.BorderStyle = BorderStyle.None;
-            sUP_fullname.Location = new Point(1357, 154);
+            sUP_fullname.Location = new Point(997, 120);
             sUP_fullname.Name = "sUP_fullname";
             sUP_fullname.PlaceholderText = "FULL NAME";
-            sUP_fullname.Size = new Size(220, 24);
+            sUP_fullname.Size = new Size(220, 16);
             sUP_fullname.TabIndex = 112;
             sUP_fullname.TextAlign = HorizontalAlignment.Center;
             sUP_fullname.Visible = false;
@@ -225,10 +223,10 @@ namespace Trabajo_practico
             // sUP_phoneNumber
             // 
             sUP_phoneNumber.BorderStyle = BorderStyle.None;
-            sUP_phoneNumber.Location = new Point(1357, 229);
+            sUP_phoneNumber.Location = new Point(997, 166);
             sUP_phoneNumber.Name = "sUP_phoneNumber";
             sUP_phoneNumber.PlaceholderText = "PHONE NUMBER";
-            sUP_phoneNumber.Size = new Size(220, 24);
+            sUP_phoneNumber.Size = new Size(220, 16);
             sUP_phoneNumber.TabIndex = 113;
             sUP_phoneNumber.TextAlign = HorizontalAlignment.Center;
             sUP_phoneNumber.Visible = false;
@@ -236,10 +234,10 @@ namespace Trabajo_practico
             // sUP_DNI
             // 
             sUP_DNI.BorderStyle = BorderStyle.None;
-            sUP_DNI.Location = new Point(1357, 303);
+            sUP_DNI.Location = new Point(997, 220);
             sUP_DNI.Name = "sUP_DNI";
             sUP_DNI.PlaceholderText = "DNI OR PASSPORT";
-            sUP_DNI.Size = new Size(220, 24);
+            sUP_DNI.Size = new Size(220, 16);
             sUP_DNI.TabIndex = 114;
             sUP_DNI.TextAlign = HorizontalAlignment.Center;
             sUP_DNI.Visible = false;
@@ -247,10 +245,10 @@ namespace Trabajo_practico
             // sUP_email
             // 
             sUP_email.BorderStyle = BorderStyle.None;
-            sUP_email.Location = new Point(1357, 377);
+            sUP_email.Location = new Point(997, 267);
             sUP_email.Name = "sUP_email";
             sUP_email.PlaceholderText = "EMAIL ADRESS";
-            sUP_email.Size = new Size(220, 24);
+            sUP_email.Size = new Size(220, 16);
             sUP_email.TabIndex = 115;
             sUP_email.TextAlign = HorizontalAlignment.Center;
             sUP_email.Visible = false;
@@ -258,10 +256,10 @@ namespace Trabajo_practico
             // sUP_password
             // 
             sUP_password.BorderStyle = BorderStyle.None;
-            sUP_password.Location = new Point(1357, 525);
+            sUP_password.Location = new Point(997, 354);
             sUP_password.Name = "sUP_password";
             sUP_password.PlaceholderText = "PASSWORD";
-            sUP_password.Size = new Size(220, 24);
+            sUP_password.Size = new Size(220, 16);
             sUP_password.TabIndex = 117;
             sUP_password.TextAlign = HorizontalAlignment.Center;
             sUP_password.UseSystemPasswordChar = true;
@@ -270,10 +268,10 @@ namespace Trabajo_practico
             // sUP_username
             // 
             sUP_username.BorderStyle = BorderStyle.None;
-            sUP_username.Location = new Point(1357, 451);
+            sUP_username.Location = new Point(997, 315);
             sUP_username.Name = "sUP_username";
             sUP_username.PlaceholderText = "USER NAME";
-            sUP_username.Size = new Size(220, 24);
+            sUP_username.Size = new Size(220, 16);
             sUP_username.TabIndex = 116;
             sUP_username.TextAlign = HorizontalAlignment.Center;
             sUP_username.Visible = false;
@@ -287,7 +285,7 @@ namespace Trabajo_practico
             signUpEnterBTN.FlatStyle = FlatStyle.Flat;
             signUpEnterBTN.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             signUpEnterBTN.ForeColor = SystemColors.Control;
-            signUpEnterBTN.Location = new Point(1357, 591);
+            signUpEnterBTN.Location = new Point(997, 396);
             signUpEnterBTN.Margin = new Padding(0);
             signUpEnterBTN.Name = "signUpEnterBTN";
             signUpEnterBTN.Size = new Size(220, 62);
@@ -307,7 +305,7 @@ namespace Trabajo_practico
             signUpBannerBTN.FlatStyle = FlatStyle.Flat;
             signUpBannerBTN.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             signUpBannerBTN.ForeColor = SystemColors.ControlText;
-            signUpBannerBTN.Location = new Point(1392, 29);
+            signUpBannerBTN.Location = new Point(1034, 9);
             signUpBannerBTN.Margin = new Padding(0);
             signUpBannerBTN.Name = "signUpBannerBTN";
             signUpBannerBTN.Size = new Size(147, 73);
@@ -336,7 +334,7 @@ namespace Trabajo_practico
             sUp_message.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
             sUp_message.Location = new Point(666, 348);
             sUp_message.Name = "sUp_message";
-            sUp_message.Size = new Size(247, 54);
+            sUp_message.Size = new Size(168, 37);
             sUp_message.TabIndex = 113;
             sUp_message.Text = "SIGNED UP!";
             sUp_message.Visible = false;
@@ -354,25 +352,6 @@ namespace Trabajo_practico
             sUp_icon.TabStop = false;
             sUp_icon.Visible = false;
             // 
-            // logInBTN2
-            // 
-            logInBTN2.BackColor = Color.RosyBrown;
-            logInBTN2.FlatAppearance.BorderSize = 0;
-            logInBTN2.FlatAppearance.MouseDownBackColor = Color.RosyBrown;
-            logInBTN2.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
-            logInBTN2.FlatStyle = FlatStyle.Flat;
-            logInBTN2.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            logInBTN2.ForeColor = SystemColors.Control;
-            logInBTN2.Location = new Point(610, 629);
-            logInBTN2.Margin = new Padding(0);
-            logInBTN2.Name = "logInBTN2";
-            logInBTN2.Size = new Size(359, 62);
-            logInBTN2.TabIndex = 115;
-            logInBTN2.Text = "LOG IN";
-            logInBTN2.UseVisualStyleBackColor = false;
-            logInBTN2.Visible = false;
-            logInBTN2.Click += logInBTN2_Click;
-            // 
             // sub_Background2
             // 
             sub_Background2.BackColor = Color.Transparent;
@@ -380,7 +359,7 @@ namespace Trabajo_practico
             sub_Background2.ForeColor = Color.BurlyWood;
             sub_Background2.Location = new Point(0, 0);
             sub_Background2.Name = "sub_Background2";
-            sub_Background2.Size = new Size(1577, 1050);
+            sub_Background2.Size = new Size(671, 1050);
             sub_Background2.TabIndex = 116;
             sub_Background2.Text = "VUELOS DISPONIBLES";
             sub_Background2.TextAlign = ContentAlignment.TopCenter;
@@ -390,20 +369,21 @@ namespace Trabajo_practico
             // 
             cbaImg1.BackgroundImage = Properties.Resources.CORDOBA;
             cbaImg1.BackgroundImageLayout = ImageLayout.Stretch;
-            cbaImg1.Location = new Point(666, 246);
+            cbaImg1.Location = new Point(530, 175);
             cbaImg1.Name = "cbaImg1";
-            cbaImg1.Size = new Size(356, 346);
+            cbaImg1.Size = new Size(267, 267);
             cbaImg1.TabIndex = 117;
             cbaImg1.TabStop = false;
             cbaImg1.Visible = false;
+            cbaImg1.Click += cbaImg1_Click;
             // 
             // bairesImg
             // 
             bairesImg.BackgroundImage = Properties.Resources.BUENOS_AIRES;
             bairesImg.BackgroundImageLayout = ImageLayout.Stretch;
-            bairesImg.Location = new Point(155, 246);
+            bairesImg.Location = new Point(139, 175);
             bairesImg.Name = "bairesImg";
-            bairesImg.Size = new Size(356, 346);
+            bairesImg.Size = new Size(267, 267);
             bairesImg.TabIndex = 118;
             bairesImg.TabStop = false;
             bairesImg.Visible = false;
@@ -412,9 +392,9 @@ namespace Trabajo_practico
             // 
             menImg.BackgroundImage = Properties.Resources.MENDOZA;
             menImg.BackgroundImageLayout = ImageLayout.Stretch;
-            menImg.Location = new Point(1177, 246);
+            menImg.Location = new Point(922, 175);
             menImg.Name = "menImg";
-            menImg.Size = new Size(356, 346);
+            menImg.Size = new Size(267, 267);
             menImg.TabIndex = 119;
             menImg.TabStop = false;
             menImg.Visible = false;
@@ -423,9 +403,9 @@ namespace Trabajo_practico
             // 
             bchImg.BackgroundImage = Properties.Resources.BARILOCHE;
             bchImg.BackgroundImageLayout = ImageLayout.Stretch;
-            bchImg.Location = new Point(666, 677);
+            bchImg.Location = new Point(530, 471);
             bchImg.Name = "bchImg";
-            bchImg.Size = new Size(356, 346);
+            bchImg.Size = new Size(267, 267);
             bchImg.TabIndex = 120;
             bchImg.TabStop = false;
             bchImg.Visible = false;
@@ -439,10 +419,10 @@ namespace Trabajo_practico
             vuelo2.FlatStyle = FlatStyle.Flat;
             vuelo2.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             vuelo2.ForeColor = SystemColors.ControlLight;
-            vuelo2.Location = new Point(543, 246);
+            vuelo2.Location = new Point(420, 175);
             vuelo2.Margin = new Padding(0);
             vuelo2.Name = "vuelo2";
-            vuelo2.Size = new Size(193, 346);
+            vuelo2.Size = new Size(121, 267);
             vuelo2.TabIndex = 125;
             vuelo2.Text = "VUELO N°2\r\nBUENOS AIRES\r\n-\r\nCÓRDOBA";
             vuelo2.UseVisualStyleBackColor = false;
@@ -457,10 +437,10 @@ namespace Trabajo_practico
             vuelo4.FlatStyle = FlatStyle.Flat;
             vuelo4.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             vuelo4.ForeColor = SystemColors.ControlLight;
-            vuelo4.Location = new Point(31, 677);
+            vuelo4.Location = new Point(31, 471);
             vuelo4.Margin = new Padding(0);
             vuelo4.Name = "vuelo4";
-            vuelo4.Size = new Size(193, 346);
+            vuelo4.Size = new Size(121, 267);
             vuelo4.TabIndex = 127;
             vuelo4.Text = "VUELO N°4\r\nMENDOZA\r\n-\r\nCÓRDOBA";
             vuelo4.UseVisualStyleBackColor = false;
@@ -470,9 +450,9 @@ namespace Trabajo_practico
             // 
             cbaImg2.BackgroundImage = Properties.Resources.CORDOBA;
             cbaImg2.BackgroundImageLayout = ImageLayout.Stretch;
-            cbaImg2.Location = new Point(155, 677);
+            cbaImg2.Location = new Point(139, 471);
             cbaImg2.Name = "cbaImg2";
-            cbaImg2.Size = new Size(356, 346);
+            cbaImg2.Size = new Size(267, 267);
             cbaImg2.TabIndex = 126;
             cbaImg2.TabStop = false;
             cbaImg2.Visible = false;
@@ -486,10 +466,10 @@ namespace Trabajo_practico
             vuelo1.FlatStyle = FlatStyle.Flat;
             vuelo1.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             vuelo1.ForeColor = SystemColors.ControlLight;
-            vuelo1.Location = new Point(31, 246);
+            vuelo1.Location = new Point(31, 175);
             vuelo1.Margin = new Padding(0);
             vuelo1.Name = "vuelo1";
-            vuelo1.Size = new Size(193, 346);
+            vuelo1.Size = new Size(121, 267);
             vuelo1.TabIndex = 128;
             vuelo1.Text = "VUELO N°1\r\nCÓRDOBA\r\n-\r\nBUENOS AIRES";
             vuelo1.UseVisualStyleBackColor = false;
@@ -504,10 +484,10 @@ namespace Trabajo_practico
             vuelo5.FlatStyle = FlatStyle.Flat;
             vuelo5.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             vuelo5.ForeColor = SystemColors.ControlLight;
-            vuelo5.Location = new Point(543, 677);
+            vuelo5.Location = new Point(420, 471);
             vuelo5.Margin = new Padding(0);
             vuelo5.Name = "vuelo5";
-            vuelo5.Size = new Size(193, 346);
+            vuelo5.Size = new Size(121, 267);
             vuelo5.TabIndex = 129;
             vuelo5.Text = "VUELO N°5\r\nCÓRDOBA\r\n-\r\nBARILOCHE";
             vuelo5.UseVisualStyleBackColor = false;
@@ -522,10 +502,10 @@ namespace Trabajo_practico
             vuelo3.FlatStyle = FlatStyle.Flat;
             vuelo3.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             vuelo3.ForeColor = SystemColors.ControlLight;
-            vuelo3.Location = new Point(1055, 246);
+            vuelo3.Location = new Point(813, 175);
             vuelo3.Margin = new Padding(0);
             vuelo3.Name = "vuelo3";
-            vuelo3.Size = new Size(193, 346);
+            vuelo3.Size = new Size(121, 267);
             vuelo3.TabIndex = 130;
             vuelo3.Text = "VUELO N°3\r\nCÓRDOBA\r\n-\r\nMENDOZA";
             vuelo3.UseVisualStyleBackColor = false;
@@ -540,10 +520,10 @@ namespace Trabajo_practico
             vuelo6.FlatStyle = FlatStyle.Flat;
             vuelo6.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             vuelo6.ForeColor = SystemColors.ControlLight;
-            vuelo6.Location = new Point(1055, 677);
+            vuelo6.Location = new Point(813, 471);
             vuelo6.Margin = new Padding(0);
             vuelo6.Name = "vuelo6";
-            vuelo6.Size = new Size(193, 346);
+            vuelo6.Size = new Size(121, 267);
             vuelo6.TabIndex = 132;
             vuelo6.Text = "VUELO N°6\r\nBARILOCHE\r\n-\r\nCÓRDOBA";
             vuelo6.UseVisualStyleBackColor = false;
@@ -553,9 +533,9 @@ namespace Trabajo_practico
             // 
             cbaImg3.BackgroundImage = Properties.Resources.CORDOBA;
             cbaImg3.BackgroundImageLayout = ImageLayout.Stretch;
-            cbaImg3.Location = new Point(1177, 677);
+            cbaImg3.Location = new Point(922, 470);
             cbaImg3.Name = "cbaImg3";
-            cbaImg3.Size = new Size(356, 346);
+            cbaImg3.Size = new Size(267, 267);
             cbaImg3.TabIndex = 131;
             cbaImg3.TabStop = false;
             cbaImg3.Visible = false;
@@ -579,29 +559,24 @@ namespace Trabajo_practico
             logoutBTN.Visible = false;
             logoutBTN.Click += logoutBTN_Click;
             // 
-            // label1
-            // 
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI Black", 40F, FontStyle.Bold);
-            label1.ForeColor = Color.BurlyWood;
-            label1.Location = new Point(-1, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(1577, 1050);
-            label1.TabIndex = 134;
-            label1.Text = "VUELOS DISPONIBLES";
-            label1.TextAlign = ContentAlignment.TopCenter;
-            label1.Visible = false;
-            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Travel;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1575, 1050);
-            Controls.Add(label1);
+            ClientSize = new Size(1217, 749);
+            Controls.Add(logInEnterBTN);
+            Controls.Add(logInBannerBTN);
+            Controls.Add(login_password);
+            Controls.Add(login_username);
+            Controls.Add(signUpEnterBTN);
+            Controls.Add(sUP_password);
+            Controls.Add(sUP_username);
+            Controls.Add(sUP_DNI);
+            Controls.Add(sUP_phoneNumber);
+            Controls.Add(sUP_fullname);
             Controls.Add(sUp_message);
-            Controls.Add(logInBTN2);
             Controls.Add(sUp_icon);
             Controls.Add(vuelo6);
             Controls.Add(vuelo3);
@@ -616,24 +591,14 @@ namespace Trabajo_practico
             Controls.Add(menImg);
             Controls.Add(bairesImg);
             Controls.Add(cbaImg1);
-            Controls.Add(logInEnterBTN);
-            Controls.Add(logInBannerBTN);
-            Controls.Add(login_password);
-            Controls.Add(login_username);
             Controls.Add(signUpBannerBTN);
-            Controls.Add(signUpEnterBTN);
-            Controls.Add(sUP_password);
-            Controls.Add(sUP_username);
             Controls.Add(sUP_email);
-            Controls.Add(sUP_DNI);
-            Controls.Add(sUP_phoneNumber);
-            Controls.Add(sUP_fullname);
-            Controls.Add(logInBTN);
-            Controls.Add(signUpBanner);
-            Controls.Add(logInBanner);
             Controls.Add(signUpBTN);
             Controls.Add(sub_Background2);
             Controls.Add(sUp_img);
+            Controls.Add(logInBTN);
+            Controls.Add(signUpBanner);
+            Controls.Add(logInBanner);
             Controls.Add(subBackground);
             DoubleBuffered = true;
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -678,7 +643,6 @@ namespace Trabajo_practico
         private PictureBox sUp_img;
         private Label sUp_message;
         private PictureBox sUp_icon;
-        private Button logInBTN2;
         private Label sub_Background2;
         private PictureBox cbaImg1;
         private PictureBox bairesImg;
@@ -693,6 +657,5 @@ namespace Trabajo_practico
         private Button vuelo6;
         private PictureBox cbaImg3;
         private Button logoutBTN;
-        private Label label1;
     }
 }

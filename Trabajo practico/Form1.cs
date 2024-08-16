@@ -1,7 +1,8 @@
 namespace Trabajo_practico
 {
-    public partial class Form1 : Form
+    public partial class VuelosWin : Form
     {
+        //variables 
         Boolean logged = false;
         Boolean signed = false;
         string fullname = "";
@@ -11,14 +12,14 @@ namespace Trabajo_practico
         int dni = 0;
         int phoneNumber = 0;
 
-        public Form1()
+        public VuelosWin()
         {
             InitializeComponent();
         }
 
         private void signUp_Banner()
         {
-            // show sign up banner
+            //show sign up banner
             logInBTN.Visible = false;
             signUpBTN.Visible = false;
             signUpBanner.Visible = true;
@@ -35,7 +36,7 @@ namespace Trabajo_practico
         private void logIn_Banner()
         {
             //show log in banner
-            signUpBTN.Visible=false;
+            signUpBTN.Visible = false;
             logInBTN.Visible = false;
             logInBanner.Visible = true;
             logInBannerBTN.Visible = true;
@@ -47,44 +48,40 @@ namespace Trabajo_practico
             sUp_icon.Visible = false;
             sUp_img.Visible = false;
             sUp_message.Visible = false;
-            
+
         }
 
         private void hideAll()
         {
-            
 
-                //hide signup banner
-                signUpBanner.Visible = false;
-                signUpBannerBTN.Visible = false;
-                signUpEnterBTN.Visible = false;
-                sUP_DNI.Visible = false;
-                sUP_email.Visible = false;
-                sUP_fullname.Visible = false;
-                sUP_password.Visible = false;
-                sUP_phoneNumber.Visible = false;
-                sUP_username.Visible = false;
+            //hide signup banner
+            signUpBanner.Visible = false;
+            signUpBannerBTN.Visible = false;
+            signUpEnterBTN.Visible = false;
+            sUP_DNI.Visible = false;
+            sUP_email.Visible = false;
+            sUP_fullname.Visible = false;
+            sUP_password.Visible = false;
+            sUP_phoneNumber.Visible = false;
+            sUP_username.Visible = false;
 
-                if (signed == false)
-                {
-                    // hide login banner
 
-                    login_password.Visible = false;
-                    login_username.Visible = false;
-                    logInEnterBTN.Visible = false;
-                    logInBanner.Visible = false;
-                    logInBannerBTN.Visible = false;
-                }
-
+            if (signed == false)
+            {
+                // hide login banner
+                login_password.Visible = false;
+                login_username.Visible = false;
+                logInEnterBTN.Visible = false;
+                logInBanner.Visible = false;
+                logInBannerBTN.Visible = false;
                 signUpBTN.Visible = true;
-            
 
+            }
 
             if (logged == false)
             {
                 logInBTN.Visible = true;
             }
-
         }
 
         private void logInBTN_Click(object sender, EventArgs e)
@@ -98,34 +95,38 @@ namespace Trabajo_practico
         }
         private void signUpEnterBTN_Click(object sender, EventArgs e)
         {
+            //textbox validation
+            if (sUP_phoneNumber.TextLength > 0 &&
+                sUP_fullname.TextLength > 0 &&
+                sUP_username.TextLength > 0 &&
+                sUP_password.TextLength > 0 &&
+                sUP_email.TextLength > 0 &&
+                sUP_DNI.TextLength > 0)
+            {
+                //signed status
+                signed = true;
 
-            signed = true;
-            //registration
-            fullname = sUP_fullname.Text;
-            username = sUP_username.Text;
-            password = sUP_password.Text;
-            email = sUP_email.Text;
-            dni = int.Parse(sUP_DNI.Text);
-            phoneNumber = int.Parse(sUP_phoneNumber.Text);
+                //registration
+                fullname = sUP_fullname.Text;
+                username = sUP_username.Text;
+                password = sUP_password.Text;
+                email = sUP_email.Text;
+                dni = int.Parse(sUP_DNI.Text);
+                phoneNumber = int.Parse(sUP_phoneNumber.Text);
 
-            //hide banner
-            signUpBanner.Visible = false;
-            signUpBannerBTN.Visible = false;
-            signUpEnterBTN.Visible = false;
-            sUP_DNI.Visible = false;
-            sUP_email.Visible = false;
-            sUP_fullname.Visible = false;
-            sUP_password.Visible = false;
-            sUP_phoneNumber.Visible = false;
-            sUP_username.Visible = false;
+                //hide banner
+                hideAll();
 
-            //show confirmation
-            sUp_icon.Visible = true;
-            sUp_img.Visible = true;
+                //show confirmation
+                sUp_icon.Visible = true;
+                sUp_img.Visible = true;
+                sUp_message.Visible = true;
+            }
+            else
+            {
+                //do nothing :)
+            }
 
-
-            sUp_message.Visible = true;
-            
         }
 
         private void logInBTN2_Click(object sender, EventArgs e)
@@ -133,10 +134,11 @@ namespace Trabajo_practico
             logIn_Banner();
         }
 
+
+        // hide banners when click or hover bg
         private void subBackground_Click(object sender, EventArgs e)
         {
             hideAll();
-
         }
 
         private void subBackground_MouseHover(object sender, EventArgs e)
@@ -144,15 +146,18 @@ namespace Trabajo_practico
             hideAll();
         }
 
+
+
         private void logInEnterBTN_Click(object sender, EventArgs e)
         {
+
+            //user and passwprd validation
             if (username == login_username.Text && password == login_password.Text)
             {
-
+                //log status
                 logged = true;
 
                 //show selection menu
-
                 sub_Background2.Visible = true;
                 logoutBTN.Visible = true;
                 vuelo1.Visible = true;
@@ -169,7 +174,6 @@ namespace Trabajo_practico
                 bchImg.Visible = true;
 
                 //hide main interface
-
                 hideAll();
             }
         }
@@ -192,7 +196,8 @@ namespace Trabajo_practico
             menImg.Visible = false;
             bchImg.Visible = false;
 
-            //delete user infostring fullname = "";
+            //delete user
+            fullname = "";
             logged = false;
             signed = false;
             username = "";
@@ -203,6 +208,11 @@ namespace Trabajo_practico
         }
 
         private void cbaImg1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

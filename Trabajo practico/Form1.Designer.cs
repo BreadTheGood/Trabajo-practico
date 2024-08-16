@@ -98,7 +98,7 @@ namespace Trabajo_practico
             // login_username
             // 
             login_username.BorderStyle = BorderStyle.None;
-            login_username.Location = new Point(997, 91);
+            login_username.Location = new Point(994, 85);
             login_username.Name = "login_username";
             login_username.PlaceholderText = "USER NAME";
             login_username.Size = new Size(220, 16);
@@ -144,7 +144,7 @@ namespace Trabajo_practico
             subBackground.ForeColor = SystemColors.ButtonFace;
             subBackground.Location = new Point(0, 0);
             subBackground.Name = "subBackground";
-            subBackground.Size = new Size(1217, 749);
+            subBackground.Size = new Size(1214, 749);
             subBackground.TabIndex = 2;
             subBackground.Text = "BIENVENIDO\r\nVuelos Argentina";
             subBackground.TextAlign = ContentAlignment.TopCenter;
@@ -154,7 +154,7 @@ namespace Trabajo_practico
             // logInBanner
             // 
             logInBanner.BackColor = SystemColors.ActiveBorder;
-            logInBanner.Location = new Point(997, 0);
+            logInBanner.Location = new Point(284, 0);
             logInBanner.Name = "logInBanner";
             logInBanner.Size = new Size(220, 294);
             logInBanner.TabIndex = 100;
@@ -359,7 +359,7 @@ namespace Trabajo_practico
             sub_Background2.ForeColor = Color.BurlyWood;
             sub_Background2.Location = new Point(0, 0);
             sub_Background2.Name = "sub_Background2";
-            sub_Background2.Size = new Size(671, 1050);
+            sub_Background2.Size = new Size(1217, 749);
             sub_Background2.TabIndex = 116;
             sub_Background2.Text = "VUELOS DISPONIBLES";
             sub_Background2.TextAlign = ContentAlignment.TopCenter;
@@ -549,7 +549,7 @@ namespace Trabajo_practico
             logoutBTN.FlatStyle = FlatStyle.Flat;
             logoutBTN.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             logoutBTN.ForeColor = SystemColors.ControlText;
-            logoutBTN.Location = new Point(19, 15);
+            logoutBTN.Location = new Point(284, 15);
             logoutBTN.Margin = new Padding(0);
             logoutBTN.Name = "logoutBTN";
             logoutBTN.Size = new Size(147, 73);
@@ -565,7 +565,7 @@ namespace Trabajo_practico
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Travel;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1217, 749);
+            ClientSize = new Size(1214, 749);
             Controls.Add(logInEnterBTN);
             Controls.Add(logInBannerBTN);
             Controls.Add(login_password);
@@ -608,6 +608,7 @@ namespace Trabajo_practico
             Name = "Form1";
             SizeGripStyle = SizeGripStyle.Hide;
             Text = "VuelosAR";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)logInBanner).EndInit();
             ((System.ComponentModel.ISupportInitialize)signUpBanner).EndInit();
             ((System.ComponentModel.ISupportInitialize)sUp_img).EndInit();

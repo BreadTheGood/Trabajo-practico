@@ -1,6 +1,8 @@
+using System.Windows.Forms;
+
 namespace Trabajo_practico
 {
-    public partial class VuelosWin : Form
+    public partial class Form1 : Form
     {
         //variables 
         Boolean logged = false;
@@ -12,9 +14,144 @@ namespace Trabajo_practico
         int dni = 0;
         int phoneNumber = 0;
 
-        public VuelosWin()
+        //main bg size
+        readonly int bgWidth = 1214;
+        readonly int bgHeight = 700;
+
+        // banners size
+        readonly int anyBannerWidth = 220;
+        readonly int suBannerHeight = 460;
+        readonly int liBannerHeight = 200;
+
+        // buttons size
+        readonly int anyButtonHeight = 40;
+
+        //images size
+        readonly int anyImageWidth = 375;
+        readonly int anyImageHeight = 240;
+
+
+        public Form1()
         {
             InitializeComponent();
+            ComponentLocation();
+            ComponentSize();
+            
+        }
+
+        private void ComponentSize()
+        {
+            //background
+            subBackground.Size = new Size(bgWidth, bgHeight);
+            subBackground2.Size = new Size(bgWidth, bgHeight);
+
+            //banners
+            signUpBanner.Size = new Size(anyBannerWidth, suBannerHeight);
+            logInBanner.Size = new Size(anyBannerWidth, liBannerHeight);
+
+            //buttons
+            logInEnterBTN.Size = new Size (anyBannerWidth, anyButtonHeight);
+            logInBannerBTN.Size = new Size(anyBannerWidth, anyButtonHeight);
+            logInBTN.Size = new Size(anyBannerWidth, anyButtonHeight);
+            signUpBannerBTN.Size = new Size(anyBannerWidth, anyButtonHeight);
+            signUpBTN.Size = new Size(anyBannerWidth, anyButtonHeight);
+            vuelo1.Size=new Size(anyImageWidth, anyButtonHeight);
+            vuelo2.Size = new Size(anyImageWidth, anyButtonHeight);
+            vuelo3.Size = new Size(anyImageWidth, anyButtonHeight);
+            vuelo4.Size = new Size(anyImageWidth, anyButtonHeight);
+            vuelo5.Size = new Size(anyImageWidth, anyButtonHeight);
+            vuelo6.Size = new Size(anyImageWidth, anyButtonHeight);
+            details1.Size = new Size(anyImageWidth, 20);
+            details2.Size = new Size(anyImageWidth, 20);
+            details3.Size = new Size(anyImageWidth, 20);
+            details4.Size = new Size(anyImageWidth, 20);
+            details5.Size = new Size(anyImageWidth, 20);
+            details6.Size = new Size(anyImageWidth, 20);
+
+            //images
+            bairesImg.Size = new Size(anyImageWidth, anyImageHeight);
+            cbaImg1.Size = new Size(anyImageWidth, anyImageHeight);
+            cbaImg2.Size = new Size(anyImageWidth, anyImageHeight);
+            cbaImg3.Size = new Size(anyImageWidth, anyImageHeight);
+            menImg.Size = new Size(anyImageWidth, anyImageHeight);
+            bchImg.Size = new Size(anyImageWidth, anyImageHeight);
+
+
+        }
+
+        private int AlingCenter(int obj1, int obj2)
+        {
+            return (obj1 - obj2) / 2;
+        }
+
+        private int AlingRight(int obj1, int obj2)
+        {
+            return obj1 - obj2;
+        }
+        private void ComponentLocation()
+        {
+            //background
+            subBackground.Location = new Point(0, 0);
+            subBackground2.Location = new Point(0, 0);
+
+            //log banners and buttons
+            logoutBTN.Location = new Point(0, 0);
+            logInBTN.Location = new Point(AlingRight(bgWidth, anyBannerWidth), anyButtonHeight);
+            logInBanner.Location = new Point(AlingRight(bgWidth, anyBannerWidth), 0);
+            logInBannerBTN.Location = new Point(AlingRight(bgWidth, anyBannerWidth), signUpBannerBTN.Height + liBannerHeight);
+            logInEnterBTN.Location = new Point(AlingRight(bgWidth, anyBannerWidth), liBannerHeight - logInEnterBTN.Height);
+
+            //sign up banners and buttons
+            signUpBanner.Location = new Point(AlingRight(bgWidth, anyBannerWidth), 0);
+            signUpBannerBTN.Location = new Point(AlingRight(bgWidth, anyBannerWidth), 0);
+            signUpBTN.Location = new Point(AlingRight(bgWidth, anyBannerWidth), 0);
+            signUpEnterBTN.Location = new Point(AlingRight(bgWidth, anyBannerWidth), suBannerHeight - signUpEnterBTN.Height);
+
+            //log textbox
+            login_username.Location = new Point(AlingRight(bgWidth, anyBannerWidth), 90);
+            login_password.Location = new Point(AlingRight(bgWidth, anyBannerWidth), login_username.Location.Y + login_password.Height * 3);
+
+            //sign up textbox
+            sUP_fullname.Location = new Point(AlingRight(bgWidth, anyBannerWidth), 90);
+            sUP_phoneNumber.Location = new Point(AlingRight(bgWidth, anyBannerWidth), sUP_fullname.Location.Y + (sUP_phoneNumber.Height * 3));
+            sUP_DNI.Location = new Point(AlingRight(bgWidth, anyBannerWidth), sUP_phoneNumber.Location.Y + sUP_DNI.Height * 3);
+            sUP_email.Location = new Point(AlingRight(bgWidth, anyBannerWidth), sUP_DNI.Location.Y + sUP_email.Height * 3);
+            sUP_username.Location = new Point(AlingRight(bgWidth, anyBannerWidth), sUP_email.Location.Y + sUP_username.Height * 3);
+            sUP_password.Location = new Point(AlingRight(bgWidth, anyBannerWidth), sUP_username.Location.Y + sUP_password.Height * 3);
+
+            //sign up confirmation message
+            sUp_icon.Location = new Point(AlingCenter(bgWidth, sUp_icon.Width), AlingCenter(bgHeight, sUp_icon.Height));
+            sUp_message.Location = new Point(AlingCenter(bgWidth, sUp_message.Width), sUp_icon.Height + AlingCenter(bgHeight, sUp_message.Height));
+
+            //images
+            //row1
+            bairesImg.Location = new Point(30, 110);
+            cbaImg1.Location = new Point(45 + anyImageWidth, 110);
+            menImg.Location = new Point(60 + anyImageWidth * 2, 110);
+
+            //row2
+            cbaImg2.Location = new Point(30, 125 + anyImageHeight);
+            bchImg.Location = new Point(45 + anyImageWidth, 125 + anyImageHeight);
+            cbaImg3.Location = new Point(60 + anyImageWidth * 2, 125 + anyImageHeight);
+
+            //image buttons
+            //row1
+            vuelo1.Location = new Point(30, 70 + anyImageHeight);
+            vuelo2.Location = new Point(45 + anyImageWidth, 70 + anyImageHeight);
+            vuelo3.Location = new Point(60 + anyImageWidth * 2, 70 + anyImageHeight);
+            details1.Location = new Point(30, 50 + anyImageHeight);
+            details2.Location = new Point(45 + anyImageWidth, 50 + anyImageHeight);
+            details3.Location = new Point(60 + anyImageWidth * 2, 50 + anyImageHeight);
+
+            //row2
+            vuelo4.Location = new Point(30, 85 + anyImageHeight * 2);
+            vuelo5.Location = new Point(45 + anyImageWidth, 85 + anyImageHeight * 2);
+            vuelo6.Location = new Point(60 + anyImageWidth * 2, 85 + anyImageHeight * 2);
+            details4.Location = new Point(30, 65 + anyImageHeight * 2);
+            details5.Location = new Point(45 + anyImageWidth, 65 + anyImageHeight * 2);
+            details6.Location = new Point(60 + anyImageWidth * 2, 65 + anyImageHeight * 2);
+
+
         }
 
         private void signUp_Banner()
@@ -35,6 +172,9 @@ namespace Trabajo_practico
 
         private void logIn_Banner()
         {
+            //fix login banner button
+            logInBannerBTN.Location = new Point(AlingRight(bgWidth, anyBannerWidth), 0);
+
             //show log in banner
             signUpBTN.Visible = false;
             logInBTN.Visible = false;
@@ -46,14 +186,12 @@ namespace Trabajo_practico
 
             //hide signup confirmation
             sUp_icon.Visible = false;
-            sUp_img.Visible = false;
             sUp_message.Visible = false;
 
         }
 
         private void hideAll()
         {
-
             //hide signup banner
             signUpBanner.Visible = false;
             signUpBannerBTN.Visible = false;
@@ -65,22 +203,22 @@ namespace Trabajo_practico
             sUP_phoneNumber.Visible = false;
             sUP_username.Visible = false;
 
+            // hide login banner
+            login_password.Visible = false;
+            login_username.Visible = false;
+            logInEnterBTN.Visible = false;
+            logInBanner.Visible = false;
+            logInBannerBTN.Visible = false;
 
-            if (signed == false)
-            {
-                // hide login banner
-                login_password.Visible = false;
-                login_username.Visible = false;
-                logInEnterBTN.Visible = false;
-                logInBanner.Visible = false;
-                logInBannerBTN.Visible = false;
-                signUpBTN.Visible = true;
-
-            }
+            signUpBTN.Visible = true;
 
             if (logged == false)
             {
                 logInBTN.Visible = true;
+            }
+            else
+            {
+                signUpBTN.Visible = false;
             }
         }
 
@@ -95,6 +233,7 @@ namespace Trabajo_practico
         }
         private void signUpEnterBTN_Click(object sender, EventArgs e)
         {
+
             //textbox validation
             if (sUP_phoneNumber.TextLength > 0 &&
                 sUP_fullname.TextLength > 0 &&
@@ -119,7 +258,6 @@ namespace Trabajo_practico
 
                 //show confirmation
                 sUp_icon.Visible = true;
-                sUp_img.Visible = true;
                 sUp_message.Visible = true;
             }
             else
@@ -135,21 +273,15 @@ namespace Trabajo_practico
         }
 
 
-        // hide banners when click or hover bg
-        private void subBackground_Click(object sender, EventArgs e)
-        {
-            hideAll();
-        }
-
+        // hide banners hover bg        
         private void subBackground_MouseHover(object sender, EventArgs e)
         {
             hideAll();
         }
 
-
-
         private void logInEnterBTN_Click(object sender, EventArgs e)
         {
+
 
             //user and passwprd validation
             if (username == login_username.Text && password == login_password.Text)
@@ -158,7 +290,13 @@ namespace Trabajo_practico
                 logged = true;
 
                 //show selection menu
-                sub_Background2.Visible = true;
+                details1.Visible = true;
+                details2.Visible = true;
+                details3.Visible = true;
+                details4.Visible = true;
+                details5.Visible = true;
+                details6.Visible = true;
+                subBackground2.Visible = true;
                 logoutBTN.Visible = true;
                 vuelo1.Visible = true;
                 vuelo2.Visible = true;
@@ -172,7 +310,7 @@ namespace Trabajo_practico
                 cbaImg3.Visible = true;
                 menImg.Visible = true;
                 bchImg.Visible = true;
-
+                
                 //hide main interface
                 hideAll();
             }
@@ -181,7 +319,13 @@ namespace Trabajo_practico
         private void logoutBTN_Click(object sender, EventArgs e)
         {
             // hide menu
-            sub_Background2.Visible = false;
+            details1.Visible = false;
+            details2.Visible = false;
+            details3.Visible = false;
+            details4.Visible = false;
+            details5.Visible = false;
+            details6.Visible = false;
+            subBackground2.Visible = false;
             logoutBTN.Visible = false;
             vuelo1.Visible = false;
             vuelo2.Visible = false;
@@ -216,5 +360,6 @@ namespace Trabajo_practico
         {
 
         }
+
     }
 }

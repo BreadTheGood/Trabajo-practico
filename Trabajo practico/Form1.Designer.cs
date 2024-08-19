@@ -70,6 +70,14 @@ namespace Trabajo_practico
             details4 = new Button();
             details5 = new Button();
             details6 = new Button();
+            cartBTN1 = new Button();
+            cartBTN3 = new Button();
+            cartBTN4 = new Button();
+            cartBTN5 = new Button();
+            cartBTN6 = new Button();
+            openCart = new Button();
+            displayName = new Label();
+            cartBTN2 = new Button();
             ((System.ComponentModel.ISupportInitialize)logInBanner).BeginInit();
             ((System.ComponentModel.ISupportInitialize)signUpBanner).BeginInit();
             ((System.ComponentModel.ISupportInitialize)sUp_icon).BeginInit();
@@ -102,18 +110,19 @@ namespace Trabajo_practico
             // login_username
             // 
             login_username.BorderStyle = BorderStyle.None;
-            login_username.Location = new Point(994, 0);
+            login_username.Location = new Point(212, 5);
             login_username.Name = "login_username";
             login_username.PlaceholderText = "USER NAME";
             login_username.Size = new Size(220, 16);
             login_username.TabIndex = 9;
             login_username.TextAlign = HorizontalAlignment.Center;
             login_username.Visible = false;
+            login_username.TextChanged += login_username_TextChanged;
             // 
             // login_password
             // 
             login_password.BorderStyle = BorderStyle.None;
-            login_password.Location = new Point(994, 0);
+            login_password.Location = new Point(-536, 10);
             login_password.Name = "login_password";
             login_password.PlaceholderText = "PASSWORD";
             login_password.Size = new Size(220, 16);
@@ -150,7 +159,7 @@ namespace Trabajo_practico
             subBackground.Margin = new Padding(0);
             subBackground.Name = "subBackground";
             subBackground.Size = new Size(1214, 621);
-            subBackground.TabIndex = 2;
+            subBackground.TabIndex = 100;
             subBackground.Text = "BIENVENIDO\r\nVuelos Argentina";
             subBackground.TextAlign = ContentAlignment.TopCenter;
             subBackground.MouseHover += subBackground_MouseHover;
@@ -193,7 +202,7 @@ namespace Trabajo_practico
             logInEnterBTN.FlatStyle = FlatStyle.Flat;
             logInEnterBTN.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             logInEnterBTN.ForeColor = SystemColors.Control;
-            logInEnterBTN.Location = new Point(994, 27);
+            logInEnterBTN.Location = new Point(212, 27);
             logInEnterBTN.Margin = new Padding(0);
             logInEnterBTN.Name = "logInEnterBTN";
             logInEnterBTN.Size = new Size(220, 10);
@@ -206,7 +215,7 @@ namespace Trabajo_practico
             // signUpBanner
             // 
             signUpBanner.BackColor = SystemColors.ActiveBorder;
-            signUpBanner.Location = new Point(994, 0);
+            signUpBanner.Location = new Point(212, 5);
             signUpBanner.Name = "signUpBanner";
             signUpBanner.Size = new Size(220, 10);
             signUpBanner.TabIndex = 103;
@@ -216,7 +225,7 @@ namespace Trabajo_practico
             // sUP_fullname
             // 
             sUP_fullname.BorderStyle = BorderStyle.None;
-            sUP_fullname.Location = new Point(994, 0);
+            sUP_fullname.Location = new Point(420, 21);
             sUP_fullname.Name = "sUP_fullname";
             sUP_fullname.PlaceholderText = "FULL NAME";
             sUP_fullname.Size = new Size(220, 16);
@@ -227,7 +236,7 @@ namespace Trabajo_practico
             // sUP_phoneNumber
             // 
             sUP_phoneNumber.BorderStyle = BorderStyle.None;
-            sUP_phoneNumber.Location = new Point(994, 0);
+            sUP_phoneNumber.Location = new Point(303, 12);
             sUP_phoneNumber.Name = "sUP_phoneNumber";
             sUP_phoneNumber.PlaceholderText = "PHONE NUMBER";
             sUP_phoneNumber.Size = new Size(220, 16);
@@ -238,7 +247,7 @@ namespace Trabajo_practico
             // sUP_DNI
             // 
             sUP_DNI.BorderStyle = BorderStyle.None;
-            sUP_DNI.Location = new Point(994, 0);
+            sUP_DNI.Location = new Point(145, 12);
             sUP_DNI.Name = "sUP_DNI";
             sUP_DNI.PlaceholderText = "DNI OR PASSPORT";
             sUP_DNI.Size = new Size(220, 16);
@@ -249,7 +258,7 @@ namespace Trabajo_practico
             // sUP_email
             // 
             sUP_email.BorderStyle = BorderStyle.None;
-            sUP_email.Location = new Point(994, 0);
+            sUP_email.Location = new Point(420, 0);
             sUP_email.Name = "sUP_email";
             sUP_email.PlaceholderText = "EMAIL ADRESS";
             sUP_email.Size = new Size(220, 16);
@@ -260,7 +269,7 @@ namespace Trabajo_practico
             // sUP_password
             // 
             sUP_password.BorderStyle = BorderStyle.None;
-            sUP_password.Location = new Point(997, 0);
+            sUP_password.Location = new Point(234, 12);
             sUP_password.Name = "sUP_password";
             sUP_password.PlaceholderText = "PASSWORD";
             sUP_password.Size = new Size(220, 16);
@@ -272,7 +281,7 @@ namespace Trabajo_practico
             // sUP_username
             // 
             sUP_username.BorderStyle = BorderStyle.None;
-            sUP_username.Location = new Point(994, 0);
+            sUP_username.Location = new Point(303, 9);
             sUP_username.Name = "sUP_username";
             sUP_username.PlaceholderText = "USER NAME";
             sUP_username.Size = new Size(220, 16);
@@ -289,7 +298,7 @@ namespace Trabajo_practico
             signUpEnterBTN.FlatStyle = FlatStyle.Flat;
             signUpEnterBTN.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             signUpEnterBTN.ForeColor = SystemColors.Control;
-            signUpEnterBTN.Location = new Point(994, 45);
+            signUpEnterBTN.Location = new Point(212, 49);
             signUpEnterBTN.Margin = new Padding(0);
             signUpEnterBTN.Name = "signUpEnterBTN";
             signUpEnterBTN.Size = new Size(220, 40);
@@ -684,6 +693,124 @@ namespace Trabajo_practico
             details6.UseVisualStyleBackColor = false;
             details6.Visible = false;
             // 
+            // cartBTN1
+            // 
+            cartBTN1.BackColor = Color.Black;
+            cartBTN1.BackgroundImage = Properties.Resources.cartBTN1;
+            cartBTN1.BackgroundImageLayout = ImageLayout.Stretch;
+            cartBTN1.FlatAppearance.BorderSize = 0;
+            cartBTN1.FlatStyle = FlatStyle.Flat;
+            cartBTN1.ForeColor = Color.Transparent;
+            cartBTN1.Location = new Point(30, 100);
+            cartBTN1.Name = "cartBTN1";
+            cartBTN1.Size = new Size(100, 30);
+            cartBTN1.TabIndex = 140;
+            cartBTN1.UseVisualStyleBackColor = false;
+            cartBTN1.Visible = false;
+            // 
+            // cartBTN3
+            // 
+            cartBTN3.BackColor = Color.Black;
+            cartBTN3.BackgroundImage = Properties.Resources.cartBTN1;
+            cartBTN3.BackgroundImageLayout = ImageLayout.Stretch;
+            cartBTN3.FlatAppearance.BorderSize = 0;
+            cartBTN3.FlatStyle = FlatStyle.Flat;
+            cartBTN3.ForeColor = Color.Transparent;
+            cartBTN3.Location = new Point(810, 100);
+            cartBTN3.Name = "cartBTN3";
+            cartBTN3.Size = new Size(100, 30);
+            cartBTN3.TabIndex = 142;
+            cartBTN3.UseVisualStyleBackColor = false;
+            cartBTN3.Visible = false;
+            // 
+            // cartBTN4
+            // 
+            cartBTN4.BackColor = Color.Black;
+            cartBTN4.BackgroundImage = Properties.Resources.cartBTN1;
+            cartBTN4.BackgroundImageLayout = ImageLayout.Stretch;
+            cartBTN4.FlatAppearance.BorderSize = 0;
+            cartBTN4.FlatStyle = FlatStyle.Flat;
+            cartBTN4.ForeColor = Color.Transparent;
+            cartBTN4.Location = new Point(30, 356);
+            cartBTN4.Name = "cartBTN4";
+            cartBTN4.Size = new Size(100, 30);
+            cartBTN4.TabIndex = 143;
+            cartBTN4.UseVisualStyleBackColor = false;
+            cartBTN4.Visible = false;
+            // 
+            // cartBTN5
+            // 
+            cartBTN5.BackColor = Color.Black;
+            cartBTN5.BackgroundImage = Properties.Resources.cartBTN1;
+            cartBTN5.BackgroundImageLayout = ImageLayout.Stretch;
+            cartBTN5.FlatAppearance.BorderSize = 0;
+            cartBTN5.FlatStyle = FlatStyle.Flat;
+            cartBTN5.ForeColor = Color.Transparent;
+            cartBTN5.Location = new Point(420, 356);
+            cartBTN5.Name = "cartBTN5";
+            cartBTN5.Size = new Size(100, 30);
+            cartBTN5.TabIndex = 144;
+            cartBTN5.UseVisualStyleBackColor = false;
+            cartBTN5.Visible = false;
+            // 
+            // cartBTN6
+            // 
+            cartBTN6.BackColor = Color.Black;
+            cartBTN6.BackgroundImage = Properties.Resources.cartBTN1;
+            cartBTN6.BackgroundImageLayout = ImageLayout.Stretch;
+            cartBTN6.FlatAppearance.BorderSize = 0;
+            cartBTN6.FlatStyle = FlatStyle.Flat;
+            cartBTN6.ForeColor = Color.Transparent;
+            cartBTN6.Location = new Point(812, 356);
+            cartBTN6.Name = "cartBTN6";
+            cartBTN6.Size = new Size(100, 30);
+            cartBTN6.TabIndex = 145;
+            cartBTN6.UseVisualStyleBackColor = false;
+            cartBTN6.Visible = false;
+            // 
+            // openCart
+            // 
+            openCart.BackColor = Color.Transparent;
+            openCart.BackgroundImage = Properties.Resources.cartimg;
+            openCart.BackgroundImageLayout = ImageLayout.Stretch;
+            openCart.FlatAppearance.BorderSize = 0;
+            openCart.FlatStyle = FlatStyle.Flat;
+            openCart.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            openCart.Location = new Point(969, 9);
+            openCart.Name = "openCart";
+            openCart.Size = new Size(35, 35);
+            openCart.TabIndex = 147;
+            openCart.UseVisualStyleBackColor = false;
+            openCart.Visible = false;
+            // 
+            // displayName
+            // 
+            displayName.BackColor = Color.DarkSlateBlue;
+            displayName.Font = new Font("Questrial", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            displayName.ForeColor = SystemColors.ButtonFace;
+            displayName.Location = new Point(1010, 0);
+            displayName.Name = "displayName";
+            displayName.Size = new Size(204, 50);
+            displayName.TabIndex = 149;
+            displayName.Text = "Hola, krakencio!";
+            displayName.TextAlign = ContentAlignment.MiddleCenter;
+            displayName.Visible = false;
+            // 
+            // cartBTN2
+            // 
+            cartBTN2.BackColor = Color.Black;
+            cartBTN2.BackgroundImage = Properties.Resources.cartBTN1;
+            cartBTN2.BackgroundImageLayout = ImageLayout.Stretch;
+            cartBTN2.FlatAppearance.BorderSize = 0;
+            cartBTN2.FlatStyle = FlatStyle.Flat;
+            cartBTN2.ForeColor = Color.Transparent;
+            cartBTN2.Location = new Point(420, 100);
+            cartBTN2.Name = "cartBTN2";
+            cartBTN2.Size = new Size(100, 30);
+            cartBTN2.TabIndex = 150;
+            cartBTN2.UseVisualStyleBackColor = false;
+            cartBTN2.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -691,6 +818,14 @@ namespace Trabajo_practico
             BackgroundImage = Properties.Resources.Travel;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1214, 621);
+            Controls.Add(cartBTN2);
+            Controls.Add(displayName);
+            Controls.Add(openCart);
+            Controls.Add(cartBTN6);
+            Controls.Add(cartBTN5);
+            Controls.Add(cartBTN4);
+            Controls.Add(cartBTN3);
+            Controls.Add(cartBTN1);
             Controls.Add(details6);
             Controls.Add(details5);
             Controls.Add(details4);
@@ -793,5 +928,13 @@ namespace Trabajo_practico
         private Button details4;
         private Button details5;
         private Button details6;
+        private Button cartBTN1;
+        private Button cartBTN3;
+        private Button cartBTN4;
+        private Button cartBTN5;
+        private Button cartBTN6;
+        private Button openCart;
+        private Label displayName;
+        private Button cartBTN2;
     }
 }

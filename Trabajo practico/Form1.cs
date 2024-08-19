@@ -1,9 +1,14 @@
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace Trabajo_practico
 {
     public partial class Form1 : Form
     {
+
+
+
+
         //variables 
         Boolean logged = false;
         Boolean signed = false;
@@ -36,7 +41,8 @@ namespace Trabajo_practico
             InitializeComponent();
             ComponentLocation();
             ComponentSize();
-            
+
+
         }
 
         private void ComponentSize()
@@ -50,12 +56,12 @@ namespace Trabajo_practico
             logInBanner.Size = new Size(anyBannerWidth, liBannerHeight);
 
             //buttons
-            logInEnterBTN.Size = new Size (anyBannerWidth, anyButtonHeight);
+            logInEnterBTN.Size = new Size(anyBannerWidth, anyButtonHeight);
             logInBannerBTN.Size = new Size(anyBannerWidth, anyButtonHeight);
             logInBTN.Size = new Size(anyBannerWidth, anyButtonHeight);
             signUpBannerBTN.Size = new Size(anyBannerWidth, anyButtonHeight);
             signUpBTN.Size = new Size(anyBannerWidth, anyButtonHeight);
-            vuelo1.Size=new Size(anyImageWidth, anyButtonHeight);
+            vuelo1.Size = new Size(anyImageWidth, anyButtonHeight);
             vuelo2.Size = new Size(anyImageWidth, anyButtonHeight);
             vuelo3.Size = new Size(anyImageWidth, anyButtonHeight);
             vuelo4.Size = new Size(anyImageWidth, anyButtonHeight);
@@ -68,6 +74,21 @@ namespace Trabajo_practico
             details5.Size = new Size(anyImageWidth, 20);
             details6.Size = new Size(anyImageWidth, 20);
 
+
+            //cart buttons
+            cartBTN1.Size = new Size(100, 30);
+            cartBTN2.Size = new Size(100, 30);
+            cartBTN3.Size = new Size(100, 30);
+            cartBTN4.Size = new Size(100, 30);
+            cartBTN5.Size = new Size(100, 30);
+            cartBTN6.Size = new Size(100, 30);
+            RoundedBTN(cartBTN1);
+            RoundedBTN(cartBTN2);
+            RoundedBTN(cartBTN3);
+            RoundedBTN(cartBTN4);
+            RoundedBTN(cartBTN5);
+            RoundedBTN(cartBTN6);
+
             //images
             bairesImg.Size = new Size(anyImageWidth, anyImageHeight);
             cbaImg1.Size = new Size(anyImageWidth, anyImageHeight);
@@ -75,8 +96,18 @@ namespace Trabajo_practico
             cbaImg3.Size = new Size(anyImageWidth, anyImageHeight);
             menImg.Size = new Size(anyImageWidth, anyImageHeight);
             bchImg.Size = new Size(anyImageWidth, anyImageHeight);
+        }
 
-
+        private void RoundedBTN(Button button)
+        {
+            //rounded cart button
+            Rectangle Rect = new Rectangle(0, 0, button.Width, button.Height);
+            GraphicsPath GraphPath = new GraphicsPath();
+            GraphPath.AddArc(Rect.X, Rect.Y, 30, button.Height, 180, 90);
+            GraphPath.AddArc(Rect.X + Rect.Width - 31, Rect.Y, 30, button.Height, 270, 90);
+            GraphPath.AddArc(Rect.X + Rect.Width - 31, Rect.Y + Rect.Height - 30, 30, button.Height, 0, 90);
+            GraphPath.AddArc(Rect.X, Rect.Y + Rect.Height - 30, 30, button.Height, 90, 90);
+            button.Region = new Region(GraphPath);
         }
 
         private int AlingCenter(int obj1, int obj2)
@@ -142,6 +173,9 @@ namespace Trabajo_practico
             details1.Location = new Point(30, 50 + anyImageHeight);
             details2.Location = new Point(45 + anyImageWidth, 50 + anyImageHeight);
             details3.Location = new Point(60 + anyImageWidth * 2, 50 + anyImageHeight);
+            cartBTN1.Location=new Point(bairesImg.Location.X, bairesImg.Location.Y-10);
+            cartBTN2.Location = new Point(cbaImg1.Location.X, cbaImg1.Location.Y - 10);
+            cartBTN3.Location = new Point(menImg.Location.X, menImg.Location.Y - 10);
 
             //row2
             vuelo4.Location = new Point(30, 85 + anyImageHeight * 2);
@@ -150,6 +184,9 @@ namespace Trabajo_practico
             details4.Location = new Point(30, 65 + anyImageHeight * 2);
             details5.Location = new Point(45 + anyImageWidth, 65 + anyImageHeight * 2);
             details6.Location = new Point(60 + anyImageWidth * 2, 65 + anyImageHeight * 2);
+            cartBTN4.Location = new Point(cbaImg2.Location.X, cbaImg2.Location.Y - 10);
+            cartBTN5.Location = new Point(bchImg.Location.X,bchImg.Location.Y - 10);
+            cartBTN6.Location = new Point(cbaImg3.Location.X, cbaImg3.Location.Y - 10);
 
 
         }
@@ -296,6 +333,14 @@ namespace Trabajo_practico
                 details4.Visible = true;
                 details5.Visible = true;
                 details6.Visible = true;
+                cartBTN1.Visible = true;
+                cartBTN2.Visible = true;
+                cartBTN3.Visible = true;
+                cartBTN4.Visible = true;
+                cartBTN5.Visible = true;
+                cartBTN6.Visible = true;
+                openCart.Visible = true;
+                displayName.Visible = true;
                 subBackground2.Visible = true;
                 logoutBTN.Visible = true;
                 vuelo1.Visible = true;
@@ -310,7 +355,7 @@ namespace Trabajo_practico
                 cbaImg3.Visible = true;
                 menImg.Visible = true;
                 bchImg.Visible = true;
-                
+
                 //hide main interface
                 hideAll();
             }
@@ -339,6 +384,7 @@ namespace Trabajo_practico
             cbaImg3.Visible = false;
             menImg.Visible = false;
             bchImg.Visible = false;
+            cartBTN1.Visible = false;
 
             //delete user
             fullname = "";
@@ -361,5 +407,9 @@ namespace Trabajo_practico
 
         }
 
+        private void login_username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

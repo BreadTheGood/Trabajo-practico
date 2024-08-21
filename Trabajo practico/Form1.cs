@@ -5,10 +5,6 @@ namespace Trabajo_practico
 {
     public partial class Form1 : Form
     {
-
-
-
-
         //variables 
         Boolean logged = false;
         Boolean signed = false;
@@ -16,8 +12,11 @@ namespace Trabajo_practico
         string username = "";
         string password = "";
         string email = "";
+        string vueloDate = "";
         int dni = 0;
         int phoneNumber = 0;
+        int pAmount = 0;
+        double precioPesos = 0;
 
         //main bg size
         readonly int bgWidth = 1214;
@@ -74,7 +73,6 @@ namespace Trabajo_practico
             details5.Size = new Size(anyImageWidth, 20);
             details6.Size = new Size(anyImageWidth, 20);
 
-
             //cart buttons
             cartBTN1.Size = new Size(100, 30);
             cartBTN2.Size = new Size(100, 30);
@@ -96,6 +94,27 @@ namespace Trabajo_practico
             cbaImg3.Size = new Size(anyImageWidth, anyImageHeight);
             menImg.Size = new Size(anyImageWidth, anyImageHeight);
             bchImg.Size = new Size(anyImageWidth, anyImageHeight);
+
+            //cart menu
+            vueloMenu.Size = new Size(266, 473);
+            vAmount.Size = new Size(vueloMenu.Width, 35);
+            vFecha.Size = new Size(vueloMenu.Width, 35);
+            vPasajes.Size = new Size(vueloMenu.Width, 35);
+            agregarBTN.Size = new Size(vueloMenu.Width, 40);
+            vueloText.Size = new Size(142, 16);
+            fechaText.Size = new Size(142, 16);
+            pasajesText.Size = new Size(142, 16);
+
+            //compra menu 
+            compraMenu.Size = vueloMenu.Size;
+            nPasajes.Size = new Size(compraMenu.Width, 70);
+            montoPesos.Size = new Size(compraMenu.Width, 80);
+            iva.Size = new Size(compraMenu.Width, 25);
+            pagarBTN.Size = new Size(compraMenu.Width, 40);
+
+
+
+
         }
 
         private void RoundedBTN(Button button)
@@ -108,6 +127,122 @@ namespace Trabajo_practico
             GraphPath.AddArc(Rect.X + Rect.Width - 31, Rect.Y + Rect.Height - 30, 30, button.Height, 0, 90);
             GraphPath.AddArc(Rect.X, Rect.Y + Rect.Height - 30, 30, button.Height, 90, 90);
             button.Region = new Region(GraphPath);
+        }
+
+        private void hideCart()
+        {
+            vueloMenu.Visible = false;
+            vAmount.Visible = false;
+            vFecha.Visible = false;
+            vPasajes.Visible = false;
+            agregarBTN.Visible = false;
+            vueloText.Visible = false;
+            fechaText.Visible = false;
+            pasajesText.Visible = false;
+        }
+
+        private void DisplayCart()
+        {
+
+            vAmount.Visible = true;
+            vFecha.Visible = true;
+            vPasajes.Visible = true;
+            agregarBTN.Visible = true;
+            vueloText.Visible = true;
+            fechaText.Visible = true;
+            pasajesText.Visible = true;
+            vueloMenu.Visible = true;
+
+            vuelo1.Visible = false;
+            vuelo2.Visible = false;
+            vuelo3.Visible = false;
+            vuelo4.Visible = false;
+            vuelo5.Visible = false;
+            vuelo6.Visible = false;
+
+            cbaImg1.Visible = false;
+            cbaImg2.Visible = false;
+            cbaImg3.Visible = false;
+            bairesImg.Visible = false;
+            menImg.Visible = false;
+            bchImg.Visible = false;
+
+            cartBTN1.Visible = false;
+            cartBTN2.Visible = false;
+            cartBTN3.Visible = false;
+            cartBTN4.Visible = false;
+            cartBTN5.Visible = false;
+            cartBTN6.Visible = false;
+
+            details1.Visible = false;
+            details2.Visible = false;
+            details3.Visible = false;
+            details4.Visible = false;
+            details5.Visible = false;
+            details6.Visible = false;
+
+        }
+
+        private Boolean fechaValida(string fecha)
+        {
+            Boolean valida = false;
+
+
+
+            if (DateTime.Parse(fecha) >= DateTime.Now || DateTime.Parse(fecha) == null)
+            {
+                valida = true;
+            }
+
+            return valida;
+        }
+
+        private double precioPasajes(string destino, string cantidad)
+        {
+            switch (int.Parse(destino))
+            {
+
+                case 1:
+
+                    precioPesos = 43700 * int.Parse(cantidad) + ((43700 * int.Parse(cantidad)) / 100) * 10.5;
+
+                    break;
+
+                case 2:
+
+                    precioPesos = 43700 * int.Parse(cantidad) + ((43700 * int.Parse(cantidad)) / 100) * 10.5;
+
+                    break;
+
+                case 3:
+
+                    precioPesos = 52000 * int.Parse(cantidad) + ((52000 * int.Parse(cantidad)) / 100) * 10.5;
+
+                    break;
+
+                case 4:
+
+                    precioPesos = 52000 * int.Parse(cantidad) + ((52000 * int.Parse(cantidad)) / 100) * 10.5;
+
+                    break;
+
+                case 5:
+
+                    precioPesos = 183000 * int.Parse(cantidad) + ((183000 * int.Parse(cantidad)) / 100) * 10.5;
+
+                    break;
+
+                case 6:
+
+                    precioPesos = 183000 * int.Parse(cantidad) + ((183000 * int.Parse(cantidad)) / 100) * 10.5;
+
+                    break;
+
+            }
+
+
+
+            return precioPesos;
         }
 
         private int AlingCenter(int obj1, int obj2)
@@ -173,7 +308,7 @@ namespace Trabajo_practico
             details1.Location = new Point(30, 50 + anyImageHeight);
             details2.Location = new Point(45 + anyImageWidth, 50 + anyImageHeight);
             details3.Location = new Point(60 + anyImageWidth * 2, 50 + anyImageHeight);
-            cartBTN1.Location=new Point(bairesImg.Location.X, bairesImg.Location.Y-10);
+            cartBTN1.Location = new Point(bairesImg.Location.X, bairesImg.Location.Y - 10);
             cartBTN2.Location = new Point(cbaImg1.Location.X, cbaImg1.Location.Y - 10);
             cartBTN3.Location = new Point(menImg.Location.X, menImg.Location.Y - 10);
 
@@ -185,9 +320,25 @@ namespace Trabajo_practico
             details5.Location = new Point(45 + anyImageWidth, 65 + anyImageHeight * 2);
             details6.Location = new Point(60 + anyImageWidth * 2, 65 + anyImageHeight * 2);
             cartBTN4.Location = new Point(cbaImg2.Location.X, cbaImg2.Location.Y - 10);
-            cartBTN5.Location = new Point(bchImg.Location.X,bchImg.Location.Y - 10);
+            cartBTN5.Location = new Point(bchImg.Location.X, bchImg.Location.Y - 10);
             cartBTN6.Location = new Point(cbaImg3.Location.X, cbaImg3.Location.Y - 10);
 
+            //cart menu
+            vueloMenu.Location = new Point(474, 69);
+            vAmount.Location = new Point(474, 250);
+            vFecha.Location = new Point(474, 350);
+            vPasajes.Location = new Point(474, 450);
+            agregarBTN.Location = new Point(474, 542);
+            vueloText.Location = new Point(vueloMenu.Location.X + AlingCenter(vueloMenu.Width, vueloText.Width), vAmount.Height + vAmount.Location.Y);
+            fechaText.Location = new Point(vueloMenu.Location.X + AlingCenter(vueloMenu.Width, fechaText.Width), vFecha.Height + vFecha.Location.Y);
+            pasajesText.Location = new Point(vueloMenu.Location.X + AlingCenter(vueloMenu.Width, pasajesText.Width), vPasajes.Height + vPasajes.Location.Y);
+
+            //pagar menu
+            compraMenu.Location = new Point(474, 69);
+            nPasajes.Location = new Point(compraMenu.Location.X, 240);
+            montoPesos.Location = new Point(compraMenu.Location.X, 370);
+            iva.Location = new Point(compraMenu.Location.X, 542 - iva.Height);
+            pagarBTN.Location = new Point(474, 542);
 
         }
 
@@ -206,27 +357,6 @@ namespace Trabajo_practico
             sUP_phoneNumber.Visible = true;
             sUP_username.Visible = true;
         }
-
-        private void logIn_Banner()
-        {
-            //fix login banner button
-            logInBannerBTN.Location = new Point(AlingRight(bgWidth, anyBannerWidth), 0);
-
-            //show log in banner
-            signUpBTN.Visible = false;
-            logInBTN.Visible = false;
-            logInBanner.Visible = true;
-            logInBannerBTN.Visible = true;
-            login_username.Visible = true;
-            login_password.Visible = true;
-            logInEnterBTN.Visible = true;
-
-            //hide signup confirmation
-            sUp_icon.Visible = false;
-            sUp_message.Visible = false;
-
-        }
-
         private void hideAll()
         {
             //hide signup banner
@@ -261,7 +391,23 @@ namespace Trabajo_practico
 
         private void logInBTN_Click(object sender, EventArgs e)
         {
-            logIn_Banner();
+            //fix login banner button
+            logInBannerBTN.Location = new Point(AlingRight(bgWidth, anyBannerWidth), 0);
+
+            //show log in banner
+            signUpBTN.Visible = false;
+            logInBTN.Visible = false;
+            logInBanner.Visible = true;
+            logInBannerBTN.Visible = true;
+            login_username.Visible = true;
+            login_password.Visible = true;
+            logInEnterBTN.Visible = true;
+
+            //hide signup confirmation
+            sUp_icon.Visible = false;
+            sUp_message.Visible = false;
+
+            hideCart();
         }
 
         private void signUpBTN_Click(object sender, EventArgs e)
@@ -302,11 +448,6 @@ namespace Trabajo_practico
                 //do nothing :)
             }
 
-        }
-
-        private void logInBTN2_Click(object sender, EventArgs e)
-        {
-            logIn_Banner();
         }
 
 
@@ -385,6 +526,26 @@ namespace Trabajo_practico
             menImg.Visible = false;
             bchImg.Visible = false;
             cartBTN1.Visible = false;
+            cartBTN2.Visible = false;
+            cartBTN3.Visible = false;
+            cartBTN4.Visible = false;
+            cartBTN5.Visible = false;
+            cartBTN6.Visible = false;
+            openCart.Visible = false;
+            displayName.Visible = false;
+            vAmount.Visible = false;
+            vFecha.Visible = false;
+            vPasajes.Visible = false;
+            fechaText.Visible = false;
+            pasajesText.Visible = false;
+            vueloText.Visible = false;
+            vueloMenu.Visible = false;
+            agregarBTN.Visible = false;
+            nPasajes.Visible = false;
+            iva.Visible = false;
+            montoPesos.Visible = false;
+            pagarBTN.Visible = false;
+            compraMenu.Visible = false;
 
             //delete user
             fullname = "";
@@ -410,6 +571,114 @@ namespace Trabajo_practico
         private void login_username_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void vuelo1_Click(object sender, EventArgs e)
+        {
+            DisplayCart();
+        }
+
+        private void cartBTN1_Click(object sender, EventArgs e)
+        {
+            DisplayCart();
+        }
+
+        private void vuelo4_Click(object sender, EventArgs e)
+        {
+            DisplayCart();
+        }
+
+        private void vuelo2_Click(object sender, EventArgs e)
+        {
+            DisplayCart();
+        }
+
+        private void vuelo5_Click(object sender, EventArgs e)
+        {
+            DisplayCart();
+        }
+
+        private void vuelo3_Click(object sender, EventArgs e)
+        {
+            DisplayCart();
+        }
+
+        private void vuelo6_Click(object sender, EventArgs e)
+        {
+            DisplayCart();
+        }
+
+        private void cartBTN3_Click(object sender, EventArgs e)
+        {
+            DisplayCart();
+        }
+
+        private void cartBTN2_Click(object sender, EventArgs e)
+        {
+            DisplayCart();
+        }
+
+        private void cartBTN5_Click(object sender, EventArgs e)
+        {
+            DisplayCart();
+        }
+
+        private void cartBTN6_Click(object sender, EventArgs e)
+        {
+            DisplayCart();
+        }
+
+        private void cartBTN4_Click(object sender, EventArgs e)
+        {
+            DisplayCart();
+        }
+
+        private void openCart_Click(object sender, EventArgs e)
+        {
+            DisplayCart();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vueloMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pagarBTN_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        
+        private void agregarBTN_Click(object sender, EventArgs e)
+        {
+            if (fechaValida(fechaText.Text))
+            {              
+                hideCart();
+                nPasajes.Visible = true;
+                iva.Visible = true;
+                montoPesos.Visible = true;
+                pagarBTN.Visible = true;
+                compraMenu.Visible = true;
+                montoPesos.Text = "MONTO A PAGAR EN PESOS: " + precioPasajes(vueloText.Text, pasajesText.Text);
+            }
+            else
+            {
+                hideCart();
+                invalidDate.Visible = true;
+            }
+
+        }
+
+        private void invalidDate_Click(object sender, EventArgs e)
+        {
+            fechaText.Text = string.Empty;
+            DisplayCart();
         }
     }
 }

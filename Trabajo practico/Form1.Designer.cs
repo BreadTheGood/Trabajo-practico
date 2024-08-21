@@ -78,6 +78,20 @@ namespace Trabajo_practico
             openCart = new Button();
             displayName = new Label();
             cartBTN2 = new Button();
+            vueloMenu = new Label();
+            vAmount = new Label();
+            vFecha = new Label();
+            vPasajes = new Label();
+            vueloText = new TextBox();
+            fechaText = new TextBox();
+            pasajesText = new TextBox();
+            agregarBTN = new Button();
+            compraMenu = new Label();
+            pagarBTN = new Button();
+            montoPesos = new Label();
+            nPasajes = new Label();
+            iva = new Label();
+            invalidDate = new Label();
             ((System.ComponentModel.ISupportInitialize)logInBanner).BeginInit();
             ((System.ComponentModel.ISupportInitialize)signUpBanner).BeginInit();
             ((System.ComponentModel.ISupportInitialize)sUp_icon).BeginInit();
@@ -98,10 +112,10 @@ namespace Trabajo_practico
             logInBTN.FlatStyle = FlatStyle.Flat;
             logInBTN.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             logInBTN.ForeColor = SystemColors.Control;
-            logInBTN.Location = new Point(0, 85);
+            logInBTN.Location = new Point(100, 85);
             logInBTN.Margin = new Padding(0);
             logInBTN.Name = "logInBTN";
-            logInBTN.Size = new Size(71, 22);
+            logInBTN.Size = new Size(501, 200);
             logInBTN.TabIndex = 98;
             logInBTN.Text = "LOG IN";
             logInBTN.UseVisualStyleBackColor = false;
@@ -110,7 +124,7 @@ namespace Trabajo_practico
             // login_username
             // 
             login_username.BorderStyle = BorderStyle.None;
-            login_username.Location = new Point(212, 5);
+            login_username.Location = new Point(223, 218);
             login_username.Name = "login_username";
             login_username.PlaceholderText = "USER NAME";
             login_username.Size = new Size(220, 16);
@@ -298,7 +312,7 @@ namespace Trabajo_practico
             signUpEnterBTN.FlatStyle = FlatStyle.Flat;
             signUpEnterBTN.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             signUpEnterBTN.ForeColor = SystemColors.Control;
-            signUpEnterBTN.Location = new Point(212, 49);
+            signUpEnterBTN.Location = new Point(184, 175);
             signUpEnterBTN.Margin = new Padding(0);
             signUpEnterBTN.Name = "signUpEnterBTN";
             signUpEnterBTN.Size = new Size(220, 40);
@@ -370,7 +384,7 @@ namespace Trabajo_practico
             // 
             cbaImg1.BackgroundImage = Properties.Resources.CORDOBA;
             cbaImg1.BackgroundImageLayout = ImageLayout.Stretch;
-            cbaImg1.Location = new Point(420, 110);
+            cbaImg1.Location = new Point(501, 288);
             cbaImg1.Name = "cbaImg1";
             cbaImg1.Size = new Size(375, 239);
             cbaImg1.TabIndex = 117;
@@ -383,7 +397,7 @@ namespace Trabajo_practico
             // 
             bairesImg.BackgroundImage = Properties.Resources.BUENOS_AIRES;
             bairesImg.BackgroundImageLayout = ImageLayout.Stretch;
-            bairesImg.Location = new Point(30, 110);
+            bairesImg.Location = new Point(68, 100);
             bairesImg.Margin = new Padding(0);
             bairesImg.Name = "bairesImg";
             bairesImg.Size = new Size(375, 239);
@@ -408,7 +422,7 @@ namespace Trabajo_practico
             // 
             bchImg.BackgroundImage = Properties.Resources.BARILOCHE;
             bchImg.BackgroundImageLayout = ImageLayout.Stretch;
-            bchImg.Location = new Point(420, 366);
+            bchImg.Location = new Point(762, 338);
             bchImg.Name = "bchImg";
             bchImg.Size = new Size(375, 239);
             bchImg.TabIndex = 120;
@@ -425,7 +439,7 @@ namespace Trabajo_practico
             vuelo2.FlatStyle = FlatStyle.Flat;
             vuelo2.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
             vuelo2.ForeColor = SystemColors.ControlLight;
-            vuelo2.Location = new Point(420, 309);
+            vuelo2.Location = new Point(212, 269);
             vuelo2.Margin = new Padding(0);
             vuelo2.Name = "vuelo2";
             vuelo2.Size = new Size(375, 40);
@@ -433,6 +447,7 @@ namespace Trabajo_practico
             vuelo2.Text = "VUELO N°2\r\nBUENOS AIRES - CÓRDOBA";
             vuelo2.UseVisualStyleBackColor = false;
             vuelo2.Visible = false;
+            vuelo2.Click += vuelo2_Click;
             // 
             // vuelo4
             // 
@@ -451,12 +466,13 @@ namespace Trabajo_practico
             vuelo4.Text = "VUELO N°4\r\nMENDOZA - CÓRDOBA";
             vuelo4.UseVisualStyleBackColor = false;
             vuelo4.Visible = false;
+            vuelo4.Click += vuelo4_Click;
             // 
             // cbaImg2
             // 
             cbaImg2.BackgroundImage = Properties.Resources.CORDOBA;
             cbaImg2.BackgroundImageLayout = ImageLayout.Stretch;
-            cbaImg2.Location = new Point(29, 366);
+            cbaImg2.Location = new Point(632, 453);
             cbaImg2.Name = "cbaImg2";
             cbaImg2.Size = new Size(375, 239);
             cbaImg2.TabIndex = 126;
@@ -473,7 +489,7 @@ namespace Trabajo_practico
             vuelo1.FlatStyle = FlatStyle.Flat;
             vuelo1.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
             vuelo1.ForeColor = SystemColors.ControlLight;
-            vuelo1.Location = new Point(30, 309);
+            vuelo1.Location = new Point(223, 348);
             vuelo1.Margin = new Padding(0);
             vuelo1.Name = "vuelo1";
             vuelo1.Size = new Size(375, 40);
@@ -481,6 +497,7 @@ namespace Trabajo_practico
             vuelo1.Text = "VUELO N°1\r\nCÓRDOBA - BUENOS AIRES";
             vuelo1.UseVisualStyleBackColor = false;
             vuelo1.Visible = false;
+            vuelo1.Click += vuelo1_Click;
             // 
             // vuelo5
             // 
@@ -491,7 +508,7 @@ namespace Trabajo_practico
             vuelo5.FlatStyle = FlatStyle.Flat;
             vuelo5.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
             vuelo5.ForeColor = SystemColors.ControlLight;
-            vuelo5.Location = new Point(420, 565);
+            vuelo5.Location = new Point(29, 558);
             vuelo5.Margin = new Padding(0);
             vuelo5.Name = "vuelo5";
             vuelo5.Size = new Size(375, 40);
@@ -499,6 +516,7 @@ namespace Trabajo_practico
             vuelo5.Text = "VUELO N°5\r\nCÓRDOBA - BARILOCHE";
             vuelo5.UseVisualStyleBackColor = false;
             vuelo5.Visible = false;
+            vuelo5.Click += vuelo5_Click;
             // 
             // vuelo3
             // 
@@ -517,6 +535,7 @@ namespace Trabajo_practico
             vuelo3.Text = "VUELO N°3\r\nCÓRDOBA - MENDOZA";
             vuelo3.UseVisualStyleBackColor = false;
             vuelo3.Visible = false;
+            vuelo3.Click += vuelo3_Click;
             // 
             // vuelo6
             // 
@@ -535,6 +554,7 @@ namespace Trabajo_practico
             vuelo6.Text = "VUELO N°6\r\nBARILOCHE - CÓRDOBA";
             vuelo6.UseVisualStyleBackColor = false;
             vuelo6.Visible = false;
+            vuelo6.Click += vuelo6_Click;
             // 
             // cbaImg3
             // 
@@ -578,7 +598,7 @@ namespace Trabajo_practico
             details1.FlatAppearance.MouseOverBackColor = Color.DarkSlateBlue;
             details1.FlatStyle = FlatStyle.Flat;
             details1.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
-            details1.Location = new Point(30, 289);
+            details1.Location = new Point(0, 240);
             details1.Name = "details1";
             details1.Size = new Size(375, 20);
             details1.TabIndex = 134;
@@ -599,7 +619,7 @@ namespace Trabajo_practico
             details2.FlatAppearance.MouseOverBackColor = Color.DarkSlateBlue;
             details2.FlatStyle = FlatStyle.Flat;
             details2.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
-            details2.Location = new Point(420, 289);
+            details2.Location = new Point(-74, 303);
             details2.Name = "details2";
             details2.Size = new Size(375, 20);
             details2.TabIndex = 135;
@@ -662,7 +682,7 @@ namespace Trabajo_practico
             details5.FlatAppearance.MouseOverBackColor = Color.DarkSlateBlue;
             details5.FlatStyle = FlatStyle.Flat;
             details5.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
-            details5.Location = new Point(420, 545);
+            details5.Location = new Point(29, 538);
             details5.Name = "details5";
             details5.Size = new Size(375, 20);
             details5.TabIndex = 138;
@@ -707,6 +727,7 @@ namespace Trabajo_practico
             cartBTN1.TabIndex = 140;
             cartBTN1.UseVisualStyleBackColor = false;
             cartBTN1.Visible = false;
+            cartBTN1.Click += cartBTN1_Click;
             // 
             // cartBTN3
             // 
@@ -722,6 +743,7 @@ namespace Trabajo_practico
             cartBTN3.TabIndex = 142;
             cartBTN3.UseVisualStyleBackColor = false;
             cartBTN3.Visible = false;
+            cartBTN3.Click += cartBTN3_Click;
             // 
             // cartBTN4
             // 
@@ -737,6 +759,7 @@ namespace Trabajo_practico
             cartBTN4.TabIndex = 143;
             cartBTN4.UseVisualStyleBackColor = false;
             cartBTN4.Visible = false;
+            cartBTN4.Click += cartBTN4_Click;
             // 
             // cartBTN5
             // 
@@ -746,12 +769,13 @@ namespace Trabajo_practico
             cartBTN5.FlatAppearance.BorderSize = 0;
             cartBTN5.FlatStyle = FlatStyle.Flat;
             cartBTN5.ForeColor = Color.Transparent;
-            cartBTN5.Location = new Point(420, 356);
+            cartBTN5.Location = new Point(29, 349);
             cartBTN5.Name = "cartBTN5";
             cartBTN5.Size = new Size(100, 30);
             cartBTN5.TabIndex = 144;
             cartBTN5.UseVisualStyleBackColor = false;
             cartBTN5.Visible = false;
+            cartBTN5.Click += cartBTN5_Click;
             // 
             // cartBTN6
             // 
@@ -767,6 +791,7 @@ namespace Trabajo_practico
             cartBTN6.TabIndex = 145;
             cartBTN6.UseVisualStyleBackColor = false;
             cartBTN6.Visible = false;
+            cartBTN6.Click += cartBTN6_Click;
             // 
             // openCart
             // 
@@ -782,11 +807,12 @@ namespace Trabajo_practico
             openCart.TabIndex = 147;
             openCart.UseVisualStyleBackColor = false;
             openCart.Visible = false;
+            openCart.Click += openCart_Click;
             // 
             // displayName
             // 
             displayName.BackColor = Color.DarkSlateBlue;
-            displayName.Font = new Font("Questrial", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            displayName.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             displayName.ForeColor = SystemColors.ButtonFace;
             displayName.Location = new Point(1010, 0);
             displayName.Name = "displayName";
@@ -804,12 +830,204 @@ namespace Trabajo_practico
             cartBTN2.FlatAppearance.BorderSize = 0;
             cartBTN2.FlatStyle = FlatStyle.Flat;
             cartBTN2.ForeColor = Color.Transparent;
-            cartBTN2.Location = new Point(420, 100);
+            cartBTN2.Location = new Point(212, 159);
             cartBTN2.Name = "cartBTN2";
             cartBTN2.Size = new Size(100, 30);
             cartBTN2.TabIndex = 150;
             cartBTN2.UseVisualStyleBackColor = false;
             cartBTN2.Visible = false;
+            cartBTN2.Click += cartBTN2_Click;
+            // 
+            // vueloMenu
+            // 
+            vueloMenu.BackColor = Color.SlateBlue;
+            vueloMenu.Font = new Font("Segoe UI Black", 40F, FontStyle.Bold);
+            vueloMenu.ForeColor = Color.BurlyWood;
+            vueloMenu.Location = new Point(277, 44);
+            vueloMenu.Name = "vueloMenu";
+            vueloMenu.Size = new Size(266, 394);
+            vueloMenu.TabIndex = 100;
+            vueloMenu.Text = "ELIGE TU VUELO";
+            vueloMenu.TextAlign = ContentAlignment.TopCenter;
+            vueloMenu.Visible = false;
+            vueloMenu.Click += vueloMenu_Click;
+            // 
+            // vAmount
+            // 
+            vAmount.BackColor = Color.DarkSlateGray;
+            vAmount.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
+            vAmount.ForeColor = Color.SeaShell;
+            vAmount.Location = new Point(374, 154);
+            vAmount.Name = "vAmount";
+            vAmount.Size = new Size(266, 35);
+            vAmount.TabIndex = 152;
+            vAmount.Text = "NÚMERO DE VUELO";
+            vAmount.TextAlign = ContentAlignment.MiddleCenter;
+            vAmount.Visible = false;
+            // 
+            // vFecha
+            // 
+            vFecha.BackColor = Color.DarkSlateGray;
+            vFecha.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
+            vFecha.ForeColor = Color.SeaShell;
+            vFecha.Location = new Point(212, 413);
+            vFecha.Name = "vFecha";
+            vFecha.Size = new Size(266, 35);
+            vFecha.TabIndex = 153;
+            vFecha.Text = "FECHA DE VUELO";
+            vFecha.TextAlign = ContentAlignment.MiddleCenter;
+            vFecha.Visible = false;
+            // 
+            // vPasajes
+            // 
+            vPasajes.BackColor = Color.DarkSlateGray;
+            vPasajes.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
+            vPasajes.ForeColor = Color.SeaShell;
+            vPasajes.Location = new Point(303, 570);
+            vPasajes.Name = "vPasajes";
+            vPasajes.Size = new Size(266, 35);
+            vPasajes.TabIndex = 154;
+            vPasajes.Text = "CANTIDAD DE PASAJES";
+            vPasajes.TextAlign = ContentAlignment.MiddleCenter;
+            vPasajes.Visible = false;
+            // 
+            // vueloText
+            // 
+            vueloText.BorderStyle = BorderStyle.None;
+            vueloText.Location = new Point(536, 293);
+            vueloText.Name = "vueloText";
+            vueloText.PlaceholderText = "DEL 1 AL 6";
+            vueloText.Size = new Size(142, 16);
+            vueloText.TabIndex = 155;
+            vueloText.TextAlign = HorizontalAlignment.Center;
+            vueloText.Visible = false;
+            // 
+            // fechaText
+            // 
+            fechaText.BorderStyle = BorderStyle.None;
+            fechaText.Location = new Point(531, 387);
+            fechaText.Name = "fechaText";
+            fechaText.PlaceholderText = "DIA/MES/AÑO";
+            fechaText.Size = new Size(142, 16);
+            fechaText.TabIndex = 156;
+            fechaText.TextAlign = HorizontalAlignment.Center;
+            fechaText.Visible = false;
+            // 
+            // pasajesText
+            // 
+            pasajesText.BorderStyle = BorderStyle.None;
+            pasajesText.Location = new Point(536, 486);
+            pasajesText.Name = "pasajesText";
+            pasajesText.PlaceholderText = "MAX . 10";
+            pasajesText.Size = new Size(142, 16);
+            pasajesText.TabIndex = 157;
+            pasajesText.TextAlign = HorizontalAlignment.Center;
+            pasajesText.Visible = false;
+            // 
+            // agregarBTN
+            // 
+            agregarBTN.BackColor = Color.MidnightBlue;
+            agregarBTN.FlatAppearance.BorderColor = Color.MediumPurple;
+            agregarBTN.FlatAppearance.BorderSize = 0;
+            agregarBTN.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 128, 255);
+            agregarBTN.FlatStyle = FlatStyle.Flat;
+            agregarBTN.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold);
+            agregarBTN.ForeColor = SystemColors.ControlLight;
+            agregarBTN.Location = new Point(549, 453);
+            agregarBTN.Margin = new Padding(0);
+            agregarBTN.Name = "agregarBTN";
+            agregarBTN.Size = new Size(266, 40);
+            agregarBTN.TabIndex = 158;
+            agregarBTN.Text = "AGREGAR";
+            agregarBTN.UseVisualStyleBackColor = false;
+            agregarBTN.Visible = false;
+            agregarBTN.Click += agregarBTN_Click;
+            // 
+            // compraMenu
+            // 
+            compraMenu.BackColor = Color.Orange;
+            compraMenu.Font = new Font("Segoe UI Black", 28F, FontStyle.Bold);
+            compraMenu.ForeColor = Color.SeaShell;
+            compraMenu.Location = new Point(549, 41);
+            compraMenu.Name = "compraMenu";
+            compraMenu.Size = new Size(266, 394);
+            compraMenu.TabIndex = 159;
+            compraMenu.Text = "CONFIRMA TU COMPRA";
+            compraMenu.TextAlign = ContentAlignment.TopCenter;
+            compraMenu.Visible = false;
+            // 
+            // pagarBTN
+            // 
+            pagarBTN.BackColor = Color.OrangeRed;
+            pagarBTN.FlatAppearance.BorderColor = Color.MediumPurple;
+            pagarBTN.FlatAppearance.BorderSize = 0;
+            pagarBTN.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 128, 255);
+            pagarBTN.FlatStyle = FlatStyle.Flat;
+            pagarBTN.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold);
+            pagarBTN.ForeColor = SystemColors.ControlLight;
+            pagarBTN.Location = new Point(205, 359);
+            pagarBTN.Margin = new Padding(0);
+            pagarBTN.Name = "pagarBTN";
+            pagarBTN.Size = new Size(266, 44);
+            pagarBTN.TabIndex = 160;
+            pagarBTN.Text = "PAGAR";
+            pagarBTN.UseVisualStyleBackColor = false;
+            pagarBTN.Visible = false;
+            pagarBTN.Click += pagarBTN_Click;
+            // 
+            // montoPesos
+            // 
+            montoPesos.BackColor = Color.DarkSlateGray;
+            montoPesos.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold);
+            montoPesos.ForeColor = Color.SeaShell;
+            montoPesos.Location = new Point(549, 305);
+            montoPesos.Name = "montoPesos";
+            montoPesos.Size = new Size(266, 79);
+            montoPesos.TabIndex = 161;
+            montoPesos.Text = "MONTO A PAGAR EN PESOS\r\n\r\n\r\n";
+            montoPesos.TextAlign = ContentAlignment.MiddleCenter;
+            montoPesos.Visible = false;
+            // 
+            // nPasajes
+            // 
+            nPasajes.BackColor = Color.DarkSlateGray;
+            nPasajes.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold);
+            nPasajes.ForeColor = Color.SeaShell;
+            nPasajes.Location = new Point(549, 154);
+            nPasajes.Name = "nPasajes";
+            nPasajes.Size = new Size(266, 131);
+            nPasajes.TabIndex = 162;
+            nPasajes.Text = "CANTIDAD DE PASAJES";
+            nPasajes.TextAlign = ContentAlignment.MiddleCenter;
+            nPasajes.Visible = false;
+            nPasajes.Click += label3_Click;
+            // 
+            // iva
+            // 
+            iva.BackColor = Color.Orange;
+            iva.Font = new Font("Segoe UI Black", 10F, FontStyle.Bold);
+            iva.ForeColor = Color.SeaShell;
+            iva.Location = new Point(549, 413);
+            iva.Name = "iva";
+            iva.Size = new Size(266, 25);
+            iva.TabIndex = 163;
+            iva.Text = "ESTE MONTO INCLUYE 10,5% DE IVA\r\n";
+            iva.TextAlign = ContentAlignment.MiddleCenter;
+            iva.Visible = false;
+            // 
+            // invalidDate
+            // 
+            invalidDate.BackColor = Color.Red;
+            invalidDate.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold);
+            invalidDate.ForeColor = Color.SeaShell;
+            invalidDate.Location = new Point(474, 245);
+            invalidDate.Name = "invalidDate";
+            invalidDate.Size = new Size(266, 131);
+            invalidDate.TabIndex = 164;
+            invalidDate.Text = "Fecha no valida";
+            invalidDate.TextAlign = ContentAlignment.MiddleCenter;
+            invalidDate.Visible = false;
+            invalidDate.Click += invalidDate_Click;
             // 
             // Form1
             // 
@@ -818,19 +1036,37 @@ namespace Trabajo_practico
             BackgroundImage = Properties.Resources.Travel;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1214, 621);
+            Controls.Add(invalidDate);
+            Controls.Add(pasajesText);
+            Controls.Add(fechaText);
+            Controls.Add(vueloText);
+            Controls.Add(vPasajes);
+            Controls.Add(vFecha);
+            Controls.Add(vAmount);
+            Controls.Add(agregarBTN);
+            Controls.Add(vueloMenu);
+            Controls.Add(iva);
+            Controls.Add(nPasajes);
+            Controls.Add(montoPesos);
+            Controls.Add(pagarBTN);
+            Controls.Add(compraMenu);
             Controls.Add(cartBTN2);
+            Controls.Add(cartBTN5);
+            Controls.Add(details5);
+            Controls.Add(details2);
+            Controls.Add(vuelo5);
+            Controls.Add(vuelo2);
+            Controls.Add(bchImg);
+            Controls.Add(cbaImg1);
             Controls.Add(displayName);
             Controls.Add(openCart);
             Controls.Add(cartBTN6);
-            Controls.Add(cartBTN5);
             Controls.Add(cartBTN4);
             Controls.Add(cartBTN3);
             Controls.Add(cartBTN1);
             Controls.Add(details6);
-            Controls.Add(details5);
             Controls.Add(details4);
             Controls.Add(details3);
-            Controls.Add(details2);
             Controls.Add(details1);
             Controls.Add(vuelo1);
             Controls.Add(logInEnterBTN);
@@ -847,23 +1083,19 @@ namespace Trabajo_practico
             Controls.Add(sUp_icon);
             Controls.Add(vuelo6);
             Controls.Add(vuelo3);
-            Controls.Add(vuelo5);
             Controls.Add(vuelo4);
-            Controls.Add(vuelo2);
             Controls.Add(logoutBTN);
             Controls.Add(cbaImg3);
             Controls.Add(cbaImg2);
-            Controls.Add(bchImg);
             Controls.Add(menImg);
             Controls.Add(bairesImg);
-            Controls.Add(cbaImg1);
             Controls.Add(signUpBannerBTN);
             Controls.Add(sUP_email);
             Controls.Add(signUpBTN);
-            Controls.Add(subBackground2);
             Controls.Add(logInBTN);
             Controls.Add(signUpBanner);
             Controls.Add(logInBanner);
+            Controls.Add(subBackground2);
             Controls.Add(subBackground);
             DoubleBuffered = true;
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -936,5 +1168,19 @@ namespace Trabajo_practico
         private Button openCart;
         private Label displayName;
         private Button cartBTN2;
+        private Label vueloMenu;
+        private Label vAmount;
+        private Label vFecha;
+        private Label vPasajes;
+        private TextBox vueloText;
+        private TextBox fechaText;
+        private TextBox pasajesText;
+        private Button agregarBTN;
+        private Label compraMenu;
+        private Button pagarBTN;
+        private Label montoPesos;
+        private Label nPasajes;
+        private Label iva;
+        private Label invalidDate;
     }
 }

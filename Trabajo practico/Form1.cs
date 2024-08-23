@@ -5,18 +5,18 @@ namespace Trabajo_practico
 {
     public partial class Form1 : Form
     {
-        //variables 
-        Boolean logged = false;
-        Boolean signed = false;
-        string fullname = "";
+        //variables        
+        Boolean logged = false;        
+        string fullname = ""; //no se usa pero es necesaria para el registro
         string username = "";
         string password = "";
-        string email = "";
-        string vueloDate = "";
-        int dni = 0;
-        int phoneNumber = 0;
-        int pAmount = 0;
+        string email = "";//no se usa pero es necesaria para el registro       
+        string dni = "0";//no se usa pero es necesaria para el registro
+        string phoneNumber="";//no se usa pero es necesaria para el registro     
         double precioPesos = 0;
+        int puntos = 0;
+        int arroba = 0;
+        int logTries = 0;
 
         //main bg size
         readonly int bgWidth = 1214;
@@ -38,14 +38,20 @@ namespace Trabajo_practico
         public Form1()
         {
             InitializeComponent();
-            ComponentLocation();
             ComponentSize();
+            ComponentLocation();
 
+
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
 
         private void ComponentSize()
         {
+
+
             //background
             subBackground.Size = new Size(bgWidth, bgHeight);
             subBackground2.Size = new Size(bgWidth, bgHeight);
@@ -72,6 +78,8 @@ namespace Trabajo_practico
             details4.Size = new Size(anyImageWidth, 20);
             details5.Size = new Size(anyImageWidth, 20);
             details6.Size = new Size(anyImageWidth, 20);
+            exitNO.Size = new Size(100,40);
+            exitYES.Size = exitNO.Size;
 
             //cart buttons
             cartBTN1.Size = new Size(100, 30);
@@ -95,6 +103,8 @@ namespace Trabajo_practico
             menImg.Size = new Size(anyImageWidth, anyImageHeight);
             bchImg.Size = new Size(anyImageWidth, anyImageHeight);
 
+            sUp_icon.Size = new Size(150, 150);
+
             //cart menu
             vueloMenu.Size = new Size(266, 473);
             vAmount.Size = new Size(vueloMenu.Width, 35);
@@ -112,148 +122,13 @@ namespace Trabajo_practico
             iva.Size = new Size(compraMenu.Width, 25);
             pagarBTN.Size = new Size(compraMenu.Width, 40);
 
-
-
-
-        }
-
-        private void RoundedBTN(Button button)
-        {
-            //rounded cart button
-            Rectangle Rect = new Rectangle(0, 0, button.Width, button.Height);
-            GraphicsPath GraphPath = new GraphicsPath();
-            GraphPath.AddArc(Rect.X, Rect.Y, 30, button.Height, 180, 90);
-            GraphPath.AddArc(Rect.X + Rect.Width - 31, Rect.Y, 30, button.Height, 270, 90);
-            GraphPath.AddArc(Rect.X + Rect.Width - 31, Rect.Y + Rect.Height - 30, 30, button.Height, 0, 90);
-            GraphPath.AddArc(Rect.X, Rect.Y + Rect.Height - 30, 30, button.Height, 90, 90);
-            button.Region = new Region(GraphPath);
-        }
-
-        private void hideCart()
-        {
-            vueloMenu.Visible = false;
-            vAmount.Visible = false;
-            vFecha.Visible = false;
-            vPasajes.Visible = false;
-            agregarBTN.Visible = false;
-            vueloText.Visible = false;
-            fechaText.Visible = false;
-            pasajesText.Visible = false;
-        }
-
-        private void DisplayCart()
-        {
-
-            vAmount.Visible = true;
-            vFecha.Visible = true;
-            vPasajes.Visible = true;
-            agregarBTN.Visible = true;
-            vueloText.Visible = true;
-            fechaText.Visible = true;
-            pasajesText.Visible = true;
-            vueloMenu.Visible = true;
-
-            vuelo1.Visible = false;
-            vuelo2.Visible = false;
-            vuelo3.Visible = false;
-            vuelo4.Visible = false;
-            vuelo5.Visible = false;
-            vuelo6.Visible = false;
-
-            cbaImg1.Visible = false;
-            cbaImg2.Visible = false;
-            cbaImg3.Visible = false;
-            bairesImg.Visible = false;
-            menImg.Visible = false;
-            bchImg.Visible = false;
-
-            cartBTN1.Visible = false;
-            cartBTN2.Visible = false;
-            cartBTN3.Visible = false;
-            cartBTN4.Visible = false;
-            cartBTN5.Visible = false;
-            cartBTN6.Visible = false;
-
-            details1.Visible = false;
-            details2.Visible = false;
-            details3.Visible = false;
-            details4.Visible = false;
-            details5.Visible = false;
-            details6.Visible = false;
+            //messages
+            invalidMsg.Size = new Size(400, 200);
+            paidMsg.Size = new Size(300, 150);
+            exitMsg.Size = new Size(300, 150);
 
         }
 
-        private Boolean fechaValida(string fecha)
-        {
-            Boolean valida = false;
-
-
-
-            if (DateTime.Parse(fecha) >= DateTime.Now || DateTime.Parse(fecha) == null)
-            {
-                valida = true;
-            }
-
-            return valida;
-        }
-
-        private double precioPasajes(string destino, string cantidad)
-        {
-            switch (int.Parse(destino))
-            {
-
-                case 1:
-
-                    precioPesos = 43700 * int.Parse(cantidad) + ((43700 * int.Parse(cantidad)) / 100) * 10.5;
-
-                    break;
-
-                case 2:
-
-                    precioPesos = 43700 * int.Parse(cantidad) + ((43700 * int.Parse(cantidad)) / 100) * 10.5;
-
-                    break;
-
-                case 3:
-
-                    precioPesos = 52000 * int.Parse(cantidad) + ((52000 * int.Parse(cantidad)) / 100) * 10.5;
-
-                    break;
-
-                case 4:
-
-                    precioPesos = 52000 * int.Parse(cantidad) + ((52000 * int.Parse(cantidad)) / 100) * 10.5;
-
-                    break;
-
-                case 5:
-
-                    precioPesos = 183000 * int.Parse(cantidad) + ((183000 * int.Parse(cantidad)) / 100) * 10.5;
-
-                    break;
-
-                case 6:
-
-                    precioPesos = 183000 * int.Parse(cantidad) + ((183000 * int.Parse(cantidad)) / 100) * 10.5;
-
-                    break;
-
-            }
-
-
-
-            return precioPesos;
-        }
-
-        private int AlingCenter(int obj1, int obj2)
-        {
-            return (obj1 - obj2) / 2;
-        }
-
-        private int AlingRight(int obj1, int obj2)
-        {
-            return obj1 - obj2;
-        }
         private void ComponentLocation()
         {
             //background
@@ -274,7 +149,7 @@ namespace Trabajo_practico
             signUpEnterBTN.Location = new Point(AlingRight(bgWidth, anyBannerWidth), suBannerHeight - signUpEnterBTN.Height);
 
             //log textbox
-            login_username.Location = new Point(AlingRight(bgWidth, anyBannerWidth), 90);
+            login_username.Location = new Point(AlingRight(bgWidth, anyBannerWidth), 60);
             login_password.Location = new Point(AlingRight(bgWidth, anyBannerWidth), login_username.Location.Y + login_password.Height * 3);
 
             //sign up textbox
@@ -340,23 +215,42 @@ namespace Trabajo_practico
             iva.Location = new Point(compraMenu.Location.X, 542 - iva.Height);
             pagarBTN.Location = new Point(474, 542);
 
+            //messages
+            invalidMsg.Location = new Point(AlingCenter(subBackground.Width, invalidMsg.Width), AlingCenter(subBackground.Height, invalidMsg.Height));
+            paidMsg.Location = new Point(AlingCenter(subBackground.Width, paidMsg.Width), AlingCenter(subBackground.Height, paidMsg.Height));
+            exitMsg.Location = new Point(AlingCenter(subBackground.Width, exitMsg.Width), AlingCenter(subBackground.Height, exitMsg.Height));
+
+            //yes/no btn
+            exitYES.Location = new Point(exitMsg.Location.X + 15, exitMsg.Location.Y + (exitMsg.Height - exitYES.Height - 15));
+            exitNO.Location = new Point(exitMsg.Location.X +(exitMsg.Width-exitNO.Width- 15), exitMsg.Location.Y + (exitMsg.Height - exitNO.Height - 15));
         }
 
-        private void signUp_Banner()
+       
+        private void RoundedBTN(Button button)
         {
-            //show sign up banner
-            logInBTN.Visible = false;
-            signUpBTN.Visible = false;
-            signUpBanner.Visible = true;
-            signUpBannerBTN.Visible = true;
-            signUpEnterBTN.Visible = true;
-            sUP_DNI.Visible = true;
-            sUP_email.Visible = true;
-            sUP_fullname.Visible = true;
-            sUP_password.Visible = true;
-            sUP_phoneNumber.Visible = true;
-            sUP_username.Visible = true;
+            //rounded cart button
+            Rectangle Rect = new Rectangle(0, 0, button.Width, button.Height);
+            GraphicsPath GraphPath = new GraphicsPath();
+            GraphPath.AddArc(Rect.X, Rect.Y, 30, button.Height, 180, 90);
+            GraphPath.AddArc(Rect.X + Rect.Width - 31, Rect.Y, 30, button.Height, 270, 90);
+            GraphPath.AddArc(Rect.X + Rect.Width - 31, Rect.Y + Rect.Height - 30, 30, button.Height, 0, 90);
+            GraphPath.AddArc(Rect.X, Rect.Y + Rect.Height - 30, 30, button.Height, 90, 90);
+            button.Region = new Region(GraphPath);
         }
+
+        private void hideCart()
+        {
+            vueloMenu.Visible = false;
+            vAmount.Visible = false;
+            vFecha.Visible = false;
+            vPasajes.Visible = false;
+            agregarBTN.Visible = false;
+            vueloText.Visible = false;
+            fechaText.Visible = false;
+            pasajesText.Visible = false;
+
+        }
+
         private void hideAll()
         {
             //hide signup banner
@@ -387,124 +281,12 @@ namespace Trabajo_practico
             {
                 signUpBTN.Visible = false;
             }
+
+            invalidMsg.Visible = false;
         }
 
-        private void logInBTN_Click(object sender, EventArgs e)
+        private void hideVuelo()
         {
-            //fix login banner button
-            logInBannerBTN.Location = new Point(AlingRight(bgWidth, anyBannerWidth), 0);
-
-            //show log in banner
-            signUpBTN.Visible = false;
-            logInBTN.Visible = false;
-            logInBanner.Visible = true;
-            logInBannerBTN.Visible = true;
-            login_username.Visible = true;
-            login_password.Visible = true;
-            logInEnterBTN.Visible = true;
-
-            //hide signup confirmation
-            sUp_icon.Visible = false;
-            sUp_message.Visible = false;
-
-            hideCart();
-        }
-
-        private void signUpBTN_Click(object sender, EventArgs e)
-        {
-            signUp_Banner();
-        }
-        private void signUpEnterBTN_Click(object sender, EventArgs e)
-        {
-
-            //textbox validation
-            if (sUP_phoneNumber.TextLength > 0 &&
-                sUP_fullname.TextLength > 0 &&
-                sUP_username.TextLength > 0 &&
-                sUP_password.TextLength > 0 &&
-                sUP_email.TextLength > 0 &&
-                sUP_DNI.TextLength > 0)
-            {
-                //signed status
-                signed = true;
-
-                //registration
-                fullname = sUP_fullname.Text;
-                username = sUP_username.Text;
-                password = sUP_password.Text;
-                email = sUP_email.Text;
-                dni = int.Parse(sUP_DNI.Text);
-                phoneNumber = int.Parse(sUP_phoneNumber.Text);
-
-                //hide banner
-                hideAll();
-
-                //show confirmation
-                sUp_icon.Visible = true;
-                sUp_message.Visible = true;
-            }
-            else
-            {
-                //do nothing :)
-            }
-
-        }
-
-
-        // hide banners hover bg        
-        private void subBackground_MouseHover(object sender, EventArgs e)
-        {
-            hideAll();
-        }
-
-        private void logInEnterBTN_Click(object sender, EventArgs e)
-        {
-
-
-            //user and passwprd validation
-            if (username == login_username.Text && password == login_password.Text)
-            {
-                //log status
-                logged = true;
-
-                //show selection menu
-                details1.Visible = true;
-                details2.Visible = true;
-                details3.Visible = true;
-                details4.Visible = true;
-                details5.Visible = true;
-                details6.Visible = true;
-                cartBTN1.Visible = true;
-                cartBTN2.Visible = true;
-                cartBTN3.Visible = true;
-                cartBTN4.Visible = true;
-                cartBTN5.Visible = true;
-                cartBTN6.Visible = true;
-                openCart.Visible = true;
-                displayName.Visible = true;
-                subBackground2.Visible = true;
-                logoutBTN.Visible = true;
-                vuelo1.Visible = true;
-                vuelo2.Visible = true;
-                vuelo3.Visible = true;
-                vuelo4.Visible = true;
-                vuelo5.Visible = true;
-                vuelo6.Visible = true;
-                bairesImg.Visible = true;
-                cbaImg1.Visible = true;
-                cbaImg2.Visible = true;
-                cbaImg3.Visible = true;
-                menImg.Visible = true;
-                bchImg.Visible = true;
-
-                //hide main interface
-                hideAll();
-            }
-        }
-
-        private void logoutBTN_Click(object sender, EventArgs e)
-        {
-            // hide menu
             details1.Visible = false;
             details2.Visible = false;
             details3.Visible = false;
@@ -532,15 +314,317 @@ namespace Trabajo_practico
             cartBTN5.Visible = false;
             cartBTN6.Visible = false;
             openCart.Visible = false;
+        }
+
+        private void DisplayCart()
+        {
+            invalidMsg.Text = "";
+            vAmount.Visible = true;
+            vFecha.Visible = true;
+            vPasajes.Visible = true;
+            agregarBTN.Visible = true;
+            vueloText.Visible = true;
+            fechaText.Visible = true;
+            pasajesText.Visible = true;
+            vueloMenu.Visible = true;
+
+            vuelo1.Visible = false;
+            vuelo2.Visible = false;
+            vuelo3.Visible = false;
+            vuelo4.Visible = false;
+            vuelo5.Visible = false;
+            vuelo6.Visible = false;
+
+            cbaImg1.Visible = false;
+            cbaImg2.Visible = false;
+            cbaImg3.Visible = false;
+            bairesImg.Visible = false;
+            menImg.Visible = false;
+            bchImg.Visible = false;
+
+            cartBTN1.Visible = false;
+            cartBTN2.Visible = false;
+            cartBTN3.Visible = false;
+            cartBTN4.Visible = false;
+            cartBTN5.Visible = false;
+            cartBTN6.Visible = false;
+
+            details1.Visible = false;
+            details2.Visible = false;
+            details3.Visible = false;
+            details4.Visible = false;
+            details5.Visible = false;
+            details6.Visible = false;
+
+        }
+        
+        private void Validos(string vuelo, string fecha, string pasaje)
+        {
+
+            string vuelos = "";
+            string fechas = "";
+            string pasajes = "";
+
+
+            if (int.Parse(vuelo) < 1 || int.Parse(vuelo) > 6)
+            {
+                vuelos ="Número de vuelo no válido";
+            }
+
+            if (fecha != "" && fecha.Length >= 8)
+            {
+                if (DateTime.Parse(fecha) < DateTime.Now)
+                {
+                    fechas = "\nFecha ingresada no válida";
+                }
+            }
+
+            if (int.Parse(pasaje) > 10)
+            {
+                pasajes = "\nCantidad de pasajes no válida";
+
+            } else if(int.Parse(pasaje) == 0 || pasaje =="")
+            {
+                pasajes = "\nNo has agregado ningún pasaje";
+            }
+
+
+
+            invalidMsg.Text = vuelos + fechas + pasajes;
+        }
+
+        private double precioPasajes(string destino, string cantidad)
+        {
+            switch (int.Parse(destino))
+            {
+
+                case 1:
+
+                    precioPesos = 43700 * int.Parse(cantidad) + ((43700 * int.Parse(cantidad)) / 100) * 10.5;
+
+                    break;
+
+                case 2:
+
+                    precioPesos = 43700 * int.Parse(cantidad) + ((43700 * int.Parse(cantidad)) / 100) * 10.5;
+
+                    break;
+
+                case 3:
+
+                    precioPesos = 52000 * int.Parse(cantidad) + ((52000 * int.Parse(cantidad)) / 100) * 10.5;
+
+                    break;
+
+                case 4:
+
+                    precioPesos = 52000 * int.Parse(cantidad) + ((52000 * int.Parse(cantidad)) / 100) * 10.5;
+
+                    break;
+
+                case 5:
+
+                    precioPesos = 183000 * int.Parse(cantidad) + ((183000 * int.Parse(cantidad)) / 100) * 10.5;
+
+                    break;
+
+                case 6:
+
+                    precioPesos = 183000 * int.Parse(cantidad) + ((183000 * int.Parse(cantidad)) / 100) * 10.5;
+
+                    break;
+
+            }
+
+
+
+            return precioPesos;
+        }
+
+        private int AlingCenter(int obj1, int obj2)
+        {
+            return (obj1 - obj2) / 2;
+        }
+
+        private int AlingRight(int obj1, int obj2)
+        {
+            return obj1 - obj2;
+        }
+
+        private void signUp_Banner()
+        {
+            //show sign up banner
+            logInBTN.Visible = false;
+            signUpBTN.Visible = false;
+            signUpBanner.Visible = true;
+            signUpBannerBTN.Visible = true;
+            signUpEnterBTN.Visible = true;
+            sUP_DNI.Visible = true;
+            sUP_email.Visible = true;
+            sUP_fullname.Visible = true;
+            sUP_password.Visible = true;
+            sUP_phoneNumber.Visible = true;
+            sUP_username.Visible = true;
+        }
+
+        private void logInBTN_Click(object sender, EventArgs e)
+        {
+            //fix login banner button
+            logInBannerBTN.Location = new Point(AlingRight(bgWidth, anyBannerWidth), 0);
+
+            //show log in banner
+            signUpBTN.Visible = false;
+            logInBTN.Visible = false;
+            logInBanner.Visible = true;
+            logInBannerBTN.Visible = true;
+            login_username.Visible = true;
+            login_password.Visible = true;
+            logInEnterBTN.Visible = true;
+
+            //hide signup confirmation
+            sUp_icon.Visible = false;
+            sUp_message.Visible = false;
+
+            hideCart();
+        }
+
+        private void signUpBTN_Click(object sender, EventArgs e)
+        {
+            signUp_Banner();
+        }
+
+        private void validMail()
+        {            
+            foreach (char letra in sUP_email.Text)
+            {
+                if(letra == '.')
+                {
+                    puntos++;
+                }
+
+                if(letra == '@')
+                {
+                    arroba++;
+                }                               
+            }
+        }
+
+        private void signUpEnterBTN_Click(object sender, EventArgs e)
+        {
+            validMail();
+
+            //textbox validation
+            if (puntos>0 && arroba>0)
+            {
+                //registration
+                fullname = sUP_fullname.Text;
+                username = sUP_username.Text;
+                password = sUP_password.Text;
+                email = sUP_email.Text;
+                dni = sUP_DNI.Text;
+                phoneNumber = sUP_phoneNumber.Text;
+
+                //hide banner
+                hideAll();
+
+                //show confirmation
+                sUp_icon.Visible = true;
+                sUp_message.Visible = true;
+
+                displayName.Text = $"Hola,{username}!";
+            }
+            else
+            {
+                invalidMsg.Text = "Mail no valido";
+                invalidMsg.Visible = true;
+            }
+        }
+             
+        private void subBackground_MouseHover(object sender, EventArgs e)
+        {
+            hideAll();
+        }
+
+        private void DisplayVuelos()
+        {
+            //show selection menu
+            details1.Visible = true;
+            details2.Visible = true;
+            details3.Visible = true;
+            details4.Visible = true;
+            details5.Visible = true;
+            details6.Visible = true;
+            cartBTN1.Visible = true;
+            cartBTN2.Visible = true;
+            cartBTN3.Visible = true;
+            cartBTN4.Visible = true;
+            cartBTN5.Visible = true;
+            cartBTN6.Visible = true;
+            openCart.Visible = true;
+            displayName.Visible = true;
+            subBackground2.Visible = true;
+            logoutBTN.Visible = true;
+            vuelo1.Visible = true;
+            vuelo2.Visible = true;
+            vuelo3.Visible = true;
+            vuelo4.Visible = true;
+            vuelo5.Visible = true;
+            vuelo6.Visible = true;
+            bairesImg.Visible = true;
+            cbaImg1.Visible = true;
+            cbaImg2.Visible = true;
+            cbaImg3.Visible = true;
+            menImg.Visible = true;
+            bchImg.Visible = true;
+            invalidMsg.Visible = false;
+        }
+
+        private void logInEnterBTN_Click(object sender, EventArgs e)
+        {
+            logTries++;
+            //user and password validation
+            if (login_password.Text != "" && login_username.Text != "")
+            {
+
+                if (username == login_username.Text && password == login_password.Text)
+                {
+                    //log status
+                    logged = true;
+
+                    DisplayVuelos();
+
+                    //hide main interface
+                    hideAll();
+                }
+                
+                
+            }             
+            
+            if (logTries > 3)
+            {
+                invalidMsg.Text = "Has superado el limite de intentos";
+                invalidMsg.Visible = true;
+            }
+
+            if (logTries <= 3 && username != login_username.Text)
+            {
+                invalidMsg.Text = "El usuario ingresado no se encuentra registrado";
+                invalidMsg.Visible = true;
+            }
+        }
+
+        private void logoutBTN_Click(object sender, EventArgs e)
+        {
+            // hide vuelos menu
+
             displayName.Visible = false;
-            vAmount.Visible = false;
-            vFecha.Visible = false;
-            vPasajes.Visible = false;
-            fechaText.Visible = false;
-            pasajesText.Visible = false;
-            vueloText.Visible = false;
-            vueloMenu.Visible = false;
-            agregarBTN.Visible = false;
+
+            hideVuelo();
+
+            //hide cart menu
+
+            hideCart();
+
             nPasajes.Visible = false;
             iva.Visible = false;
             montoPesos.Visible = false;
@@ -550,29 +634,16 @@ namespace Trabajo_practico
             //delete user
             fullname = "";
             logged = false;
-            signed = false;
             username = "";
             password = "";
             email = "";
-            dni = 0;
-            phoneNumber = 0;
-        }
-
-        private void cbaImg1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void login_username_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+            dni = "";
+            phoneNumber = "";
+            puntos = 0;
+            arroba = 0;
+            logTries = 0;
+        }            
+               
         private void vuelo1_Click(object sender, EventArgs e)
         {
             DisplayCart();
@@ -638,47 +709,80 @@ namespace Trabajo_practico
             DisplayCart();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vueloMenu_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pagarBTN_Click(object sender, EventArgs e)
         {
-
+            paidMsg.Visible = true;
+            nPasajes.Visible = false;
+            iva.Visible = false;
+            montoPesos.Visible = false;
+            pagarBTN.Visible = false;
+            compraMenu.Visible = false;
 
         }
 
-        
         private void agregarBTN_Click(object sender, EventArgs e)
         {
-            if (fechaValida(fechaText.Text))
-            {              
+            Validos(vueloText.Text, fechaText.Text, pasajesText.Text);
+
+            if (invalidMsg.Text == "")
+            {
                 hideCart();
+                invalidMsg.Visible = false;
                 nPasajes.Visible = true;
                 iva.Visible = true;
                 montoPesos.Visible = true;
                 pagarBTN.Visible = true;
                 compraMenu.Visible = true;
+
+                nPasajes.Text = "CANTIDAD DE PASAJES: " + pasajesText.Text;
                 montoPesos.Text = "MONTO A PAGAR EN PESOS: " + precioPasajes(vueloText.Text, pasajesText.Text);
             }
             else
             {
                 hideCart();
-                invalidDate.Visible = true;
+                invalidMsg.Visible = true;
             }
 
         }
 
         private void invalidDate_Click(object sender, EventArgs e)
         {
-            fechaText.Text = string.Empty;
-            DisplayCart();
+            if (logged)
+            {
+                vueloText.Text = string.Empty;
+                pasajesText.Text = string.Empty;
+                fechaText.Text = string.Empty;
+                DisplayCart();
+            }
+            
+            invalidMsg.Visible = false;
+        }
+
+        private void paidMsg_Click(object sender, EventArgs e)
+        {
+            paidMsg.Visible = false;
+            exitNO.Visible = true;
+            exitYES.Visible = true;
+            exitMsg.Visible = true;
+        }
+
+        private void exitYES_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void exitNO_Click(object sender, EventArgs e)
+        {
+            exitYES.Visible = false;
+            exitNO.Visible = false;
+            exitMsg.Visible=false;
+
+            DisplayVuelos();
+
+            fechaText.Text= string.Empty;
+            pasajesText.Text = string.Empty;
+            vueloText.Text = string.Empty;
+
         }
     }
 }

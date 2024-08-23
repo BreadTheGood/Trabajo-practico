@@ -91,7 +91,11 @@ namespace Trabajo_practico
             montoPesos = new Label();
             nPasajes = new Label();
             iva = new Label();
-            invalidDate = new Label();
+            invalidMsg = new Label();
+            paidMsg = new Label();
+            exitMsg = new Label();
+            exitYES = new Button();
+            exitNO = new Button();
             ((System.ComponentModel.ISupportInitialize)logInBanner).BeginInit();
             ((System.ComponentModel.ISupportInitialize)signUpBanner).BeginInit();
             ((System.ComponentModel.ISupportInitialize)sUp_icon).BeginInit();
@@ -131,7 +135,6 @@ namespace Trabajo_practico
             login_username.TabIndex = 9;
             login_username.TextAlign = HorizontalAlignment.Center;
             login_username.Visible = false;
-            login_username.TextChanged += login_username_TextChanged;
             // 
             // login_password
             // 
@@ -216,7 +219,7 @@ namespace Trabajo_practico
             logInEnterBTN.FlatStyle = FlatStyle.Flat;
             logInEnterBTN.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             logInEnterBTN.ForeColor = SystemColors.Control;
-            logInEnterBTN.Location = new Point(212, 27);
+            logInEnterBTN.Location = new Point(184, 129);
             logInEnterBTN.Margin = new Padding(0);
             logInEnterBTN.Name = "logInEnterBTN";
             logInEnterBTN.Size = new Size(220, 10);
@@ -229,7 +232,7 @@ namespace Trabajo_practico
             // signUpBanner
             // 
             signUpBanner.BackColor = SystemColors.ActiveBorder;
-            signUpBanner.Location = new Point(212, 5);
+            signUpBanner.Location = new Point(64, 40);
             signUpBanner.Name = "signUpBanner";
             signUpBanner.Size = new Size(220, 10);
             signUpBanner.TabIndex = 103;
@@ -239,7 +242,7 @@ namespace Trabajo_practico
             // sUP_fullname
             // 
             sUP_fullname.BorderStyle = BorderStyle.None;
-            sUP_fullname.Location = new Point(420, 21);
+            sUP_fullname.Location = new Point(438, 62);
             sUP_fullname.Name = "sUP_fullname";
             sUP_fullname.PlaceholderText = "FULL NAME";
             sUP_fullname.Size = new Size(220, 16);
@@ -250,7 +253,7 @@ namespace Trabajo_practico
             // sUP_phoneNumber
             // 
             sUP_phoneNumber.BorderStyle = BorderStyle.None;
-            sUP_phoneNumber.Location = new Point(303, 12);
+            sUP_phoneNumber.Location = new Point(212, 67);
             sUP_phoneNumber.Name = "sUP_phoneNumber";
             sUP_phoneNumber.PlaceholderText = "PHONE NUMBER";
             sUP_phoneNumber.Size = new Size(220, 16);
@@ -261,7 +264,7 @@ namespace Trabajo_practico
             // sUP_DNI
             // 
             sUP_DNI.BorderStyle = BorderStyle.None;
-            sUP_DNI.Location = new Point(145, 12);
+            sUP_DNI.Location = new Point(282, 108);
             sUP_DNI.Name = "sUP_DNI";
             sUP_DNI.PlaceholderText = "DNI OR PASSPORT";
             sUP_DNI.Size = new Size(220, 16);
@@ -272,7 +275,7 @@ namespace Trabajo_practico
             // sUP_email
             // 
             sUP_email.BorderStyle = BorderStyle.None;
-            sUP_email.Location = new Point(420, 0);
+            sUP_email.Location = new Point(410, 45);
             sUP_email.Name = "sUP_email";
             sUP_email.PlaceholderText = "EMAIL ADRESS";
             sUP_email.Size = new Size(220, 16);
@@ -283,7 +286,7 @@ namespace Trabajo_practico
             // sUP_password
             // 
             sUP_password.BorderStyle = BorderStyle.None;
-            sUP_password.Location = new Point(234, 12);
+            sUP_password.Location = new Point(136, 110);
             sUP_password.Name = "sUP_password";
             sUP_password.PlaceholderText = "PASSWORD";
             sUP_password.Size = new Size(220, 16);
@@ -295,7 +298,7 @@ namespace Trabajo_practico
             // sUP_username
             // 
             sUP_username.BorderStyle = BorderStyle.None;
-            sUP_username.Location = new Point(303, 9);
+            sUP_username.Location = new Point(258, 88);
             sUP_username.Name = "sUP_username";
             sUP_username.PlaceholderText = "USER NAME";
             sUP_username.Size = new Size(220, 16);
@@ -391,13 +394,12 @@ namespace Trabajo_practico
             cbaImg1.TabStop = false;
             cbaImg1.Tag = "";
             cbaImg1.Visible = false;
-            cbaImg1.Click += cbaImg1_Click;
             // 
             // bairesImg
             // 
             bairesImg.BackgroundImage = Properties.Resources.BUENOS_AIRES;
             bairesImg.BackgroundImageLayout = ImageLayout.Stretch;
-            bairesImg.Location = new Point(68, 100);
+            bairesImg.Location = new Point(44, 199);
             bairesImg.Margin = new Padding(0);
             bairesImg.Name = "bairesImg";
             bairesImg.Size = new Size(375, 239);
@@ -843,14 +845,13 @@ namespace Trabajo_practico
             vueloMenu.BackColor = Color.SlateBlue;
             vueloMenu.Font = new Font("Segoe UI Black", 40F, FontStyle.Bold);
             vueloMenu.ForeColor = Color.BurlyWood;
-            vueloMenu.Location = new Point(277, 44);
+            vueloMenu.Location = new Point(536, 110);
             vueloMenu.Name = "vueloMenu";
             vueloMenu.Size = new Size(266, 394);
             vueloMenu.TabIndex = 100;
             vueloMenu.Text = "ELIGE TU VUELO";
             vueloMenu.TextAlign = ContentAlignment.TopCenter;
             vueloMenu.Visible = false;
-            vueloMenu.Click += vueloMenu_Click;
             // 
             // vAmount
             // 
@@ -1000,7 +1001,6 @@ namespace Trabajo_practico
             nPasajes.Text = "CANTIDAD DE PASAJES";
             nPasajes.TextAlign = ContentAlignment.MiddleCenter;
             nPasajes.Visible = false;
-            nPasajes.Click += label3_Click;
             // 
             // iva
             // 
@@ -1015,19 +1015,84 @@ namespace Trabajo_practico
             iva.TextAlign = ContentAlignment.MiddleCenter;
             iva.Visible = false;
             // 
-            // invalidDate
+            // invalidMsg
             // 
-            invalidDate.BackColor = Color.Red;
-            invalidDate.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold);
-            invalidDate.ForeColor = Color.SeaShell;
-            invalidDate.Location = new Point(474, 245);
-            invalidDate.Name = "invalidDate";
-            invalidDate.Size = new Size(266, 131);
-            invalidDate.TabIndex = 164;
-            invalidDate.Text = "Fecha no valida";
-            invalidDate.TextAlign = ContentAlignment.MiddleCenter;
-            invalidDate.Visible = false;
-            invalidDate.Click += invalidDate_Click;
+            invalidMsg.BackColor = Color.Red;
+            invalidMsg.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold);
+            invalidMsg.ForeColor = Color.SeaShell;
+            invalidMsg.Location = new Point(119, 240);
+            invalidMsg.Name = "invalidMsg";
+            invalidMsg.Size = new Size(300, 150);
+            invalidMsg.TabIndex = 164;
+            invalidMsg.Text = "Fecha no valida";
+            invalidMsg.TextAlign = ContentAlignment.MiddleCenter;
+            invalidMsg.Visible = false;
+            invalidMsg.Click += invalidDate_Click;
+            // 
+            // paidMsg
+            // 
+            paidMsg.BackColor = Color.ForestGreen;
+            paidMsg.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold);
+            paidMsg.ForeColor = Color.SeaShell;
+            paidMsg.Location = new Point(48, 249);
+            paidMsg.Name = "paidMsg";
+            paidMsg.Size = new Size(300, 150);
+            paidMsg.TabIndex = 165;
+            paidMsg.Text = "TU COMPRA FUE REALIZADA EXITOSAMENTE!";
+            paidMsg.TextAlign = ContentAlignment.MiddleCenter;
+            paidMsg.Visible = false;
+            paidMsg.Click += paidMsg_Click;
+            // 
+            // exitMsg
+            // 
+            exitMsg.BackColor = Color.BlueViolet;
+            exitMsg.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold);
+            exitMsg.ForeColor = Color.SeaShell;
+            exitMsg.Location = new Point(737, 84);
+            exitMsg.Name = "exitMsg";
+            exitMsg.Size = new Size(300, 150);
+            exitMsg.TabIndex = 166;
+            exitMsg.Text = "\r\nDESEAS SALIR?";
+            exitMsg.TextAlign = ContentAlignment.TopCenter;
+            exitMsg.Visible = false;
+            // 
+            // exitYES
+            // 
+            exitYES.BackColor = Color.MidnightBlue;
+            exitYES.FlatAppearance.BorderColor = Color.MediumPurple;
+            exitYES.FlatAppearance.BorderSize = 0;
+            exitYES.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 128, 255);
+            exitYES.FlatStyle = FlatStyle.Flat;
+            exitYES.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold);
+            exitYES.ForeColor = SystemColors.ControlLight;
+            exitYES.Location = new Point(443, 324);
+            exitYES.Margin = new Padding(0);
+            exitYES.Name = "exitYES";
+            exitYES.Size = new Size(103, 40);
+            exitYES.TabIndex = 167;
+            exitYES.Text = "SI";
+            exitYES.UseVisualStyleBackColor = false;
+            exitYES.Visible = false;
+            exitYES.Click += exitYES_Click;
+            // 
+            // exitNO
+            // 
+            exitNO.BackColor = Color.MidnightBlue;
+            exitNO.FlatAppearance.BorderColor = Color.MediumPurple;
+            exitNO.FlatAppearance.BorderSize = 0;
+            exitNO.FlatAppearance.MouseDownBackColor = Color.FromArgb(128, 128, 255);
+            exitNO.FlatStyle = FlatStyle.Flat;
+            exitNO.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold);
+            exitNO.ForeColor = SystemColors.ControlLight;
+            exitNO.Location = new Point(598, 319);
+            exitNO.Margin = new Padding(0);
+            exitNO.Name = "exitNO";
+            exitNO.Size = new Size(103, 40);
+            exitNO.TabIndex = 168;
+            exitNO.Text = "NO";
+            exitNO.UseVisualStyleBackColor = false;
+            exitNO.Visible = false;
+            exitNO.Click += exitNO_Click;
             // 
             // Form1
             // 
@@ -1036,7 +1101,11 @@ namespace Trabajo_practico
             BackgroundImage = Properties.Resources.Travel;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1214, 621);
-            Controls.Add(invalidDate);
+            Controls.Add(exitNO);
+            Controls.Add(exitYES);
+            Controls.Add(exitMsg);
+            Controls.Add(paidMsg);
+            Controls.Add(invalidMsg);
             Controls.Add(pasajesText);
             Controls.Add(fechaText);
             Controls.Add(vueloText);
@@ -1181,6 +1250,10 @@ namespace Trabajo_practico
         private Label montoPesos;
         private Label nPasajes;
         private Label iva;
-        private Label invalidDate;
+        private Label invalidMsg;
+        private Label paidMsg;
+        private Label exitMsg;
+        private Button exitYES;
+        private Button exitNO;
     }
 }
